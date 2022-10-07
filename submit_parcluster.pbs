@@ -1,0 +1,34 @@
+#!/bin/bash
+#PBS -N matlab_pct
+#PBS -A UCSB0015
+#PBS -l walltime=12:00:00
+#PBS -q casper
+#PBS -j oe
+#PBS -o local.log
+#PBS -l select=1:ncpus=20:mpiprocs=20:mem=40GB
+
+# The following script is not distributed; it uses threads
+# and so this PBS job should only ever request a single node
+
+module load matlab
+
+# Derive the number of workers to use in the toolbox run script
+export NUMWORKERS=$(wc -l $PBS_NODEFILE | cut -d' ' -f1)
+
+SECONDS=0
+matlab -nodesktop -nosplash << EOF
+% Add cluster profile if not already present
+if ~any(strcmp(parallel.clusterProfiles, 'ncar_mps'))
+    ncar_mps = parallel.importProfile('/glade/u/apps/opt/matlab/parallel/ncar_mps.mlsettings');
+end
+
+% Start PBS cluster and submit job with custom number of workers
+c = parcluster('ncar_mps')
+j = batch(c,"main", 'Pool', $((NUMWORKERS - 1)));
+
+% Wait for the job to finish, then get output
+wait(j);
+diary(j);
+exit;
+EOF
+echo "Time elapsed = $SECONDS s"

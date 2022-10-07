@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -N matlab_pct
+#PBS -A UCSB0015
+#PBS -l walltime=24:00:00
+#PBS -q casper
+#PBS -j oe
+#PBS -o local.log
+#PBS -l select=1:ncpus=24:mpiprocs=24:mem=96GB
+
+# The following script is not distributed; it uses threads
+# and so this PBS job should only ever request a single node
+
+module load matlab
+
+# # Derive the number of workers to use in the toolbox run script
+# export NUMWORKERS=$(wc -l $PBS_NODEFILE | cut -d' ' -f1)
+
+SECONDS=0
+matlab -nodesktop -nosplash -r 'run main.m'
+echo "Time elapsed = $SECONDS s"
