@@ -1,0 +1,60 @@
+MATLAB is selecting SOFTWARE OPENGL rendering.
+OMP: Warning #181: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2022 The MathWorks, Inc.
+                  R2022a (9.12.0.1884302) 64-bit (glnxa64)
+                             February 16, 2022
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Age model construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+
+   Done.
+#  Records are being aligned to the target stack...
+#  Iteration 1:
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [28.18768      19.23281      56.43816      44.55951      96.65283      157.0145      61.42521      14.80767       11.2714        63.266      41.51158      25.33937      10.68284      37.97478      177.1543      10.96129      29.02453      32.54878      43.86654      96.89023      143.4857      101.5445      78.15761      23.48491       83.3616      65.39912      64.25114      141.6056      7.014544      7.006589      6.657328      47.83653].
+#  Iteration 2:
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.236732     0.141578     0.500944     0.257288      3.78547      5.69821     0.934587     0.445031     0.157665     0.256364      1.09007     0.250279 -0.000850055      1.11681      10.5752     0.311003     0.727792     0.210307     0.440346     0.606014      1.08838      1.17076      2.59081     0.862816       4.8882      1.49218     0.686068      2.65529     0.123923   -0.0475725    -0.119328     0.126904].
+#  Iteration 3:
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.0050627     0.11081  -0.0068338   0.0044243     0.21055  -0.0074054     -0.1045     -0.0357  -0.0039359  -0.0062067    -0.28791     -0.4612    -0.16196   -0.033015      1.5362    0.085587    -0.22827     0.52099     0.28159     -1.0902   -0.012531    -0.15904    -0.19248      1.7857    -0.23687    -0.21658    0.041664     0.22245  -0.0080398    -0.44111   -0.011411     0.52548].
+#  Iteration 4:
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.0034899    0.024367  -0.0032267     0.20483    -0.42844     0.16564    -0.02545  -0.0031871   0.0095527    0.073546    0.081535     0.22376 -0.00086643   0.0063749   0.0050175    0.035599    -0.40363    0.018523  -0.0072352      0.1249   -0.019733     0.10877    -0.01576   -0.063923    0.085126     0.10373    -0.26237     0.14797     0.14127   -0.027212    0.040522    -0.32426].
+#  Parameters are learned. Sampling algorithm is now running...
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+
+   Done.
+-------------------------------------------------------------------------------------------
+#  Results and figures are being stored...
+[Warning: MATLAB has disabled some advanced graphics rendering features by
+switching to software OpenGL. For more information, click <a
+href="matlab:opengl('problems')">here</a>.] 
+   Done.
+   Results and figures are stored in Outputs/R6_d18O.
+-------------------------------------------------------------------------------------------
+Time elapsed = 10960 s

@@ -1,0 +1,71 @@
+MATLAB is selecting SOFTWARE OPENGL rendering.
+OMP: Warning #181: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2022 The MathWorks, Inc.
+                  R2022a (9.12.0.1884302) 64-bit (glnxa64)
+                             February 16, 2022
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Age model construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+
+   Done.
+#  Records are being aligned to the target stack...
+MATLAB is selecting SOFTWARE OPENGL rendering.
+#  Iteration 1:
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+
+OMP: Warning #181: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [3.5639].
+#  Iteration 2:
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.15339].
+#  Iteration 3:
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2022 The MathWorks, Inc.
+                  R2022a (9.12.0.1884302) 64-bit (glnxa64)
+                             February 16, 2022
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Age model construction algorithm is now running...
+#  Initializing...
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.026176].
+#  Iteration 4:
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+   Data are loaded successfully.
+   Initializing the age samples...
+
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.014396].
+#  Parameters are learned. Sampling algorithm is now running...
+Starting parallel pool (parpool) using the 'ncar_mps_Import_1' profile ...
+
+
