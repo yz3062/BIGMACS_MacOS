@@ -1,0 +1,4 @@
+Age: 1.4-2.7 ma
+Records: HMM records
+Note: 
+R7 includes all HMM records. If a core has both LR04 and HMM records, HMM records is used cuz more data might be available.
