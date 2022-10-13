@@ -44,4 +44,4 @@ axes.set_xlabel('Age (ka BP)')
 
 fig.set_size_inches(6,4)
 
-# plt.savefig('Stack_LR04.png', dpi=500)
+plt.savefig('Stack_LR04.png', dpi=500)
