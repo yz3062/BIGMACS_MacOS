@@ -1,4 +1,4 @@
-inputFile = 'R6';
+inputFile = 'R7';
 
 % inputMode = 'age_model_construction';
 inputMode = 'stack_construction';

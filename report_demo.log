@@ -1,0 +1,95 @@
+MATLAB is selecting SOFTWARE OPENGL rendering.
+OMP: Warning #181: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2022 The MathWorks, Inc.
+                  R2022a (9.12.0.1884302) 64-bit (glnxa64)
+                             February 16, 2022
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> >> 
+c = 
+
+ PBSPro Cluster
+
+    Properties: 
+
+                   Profile: ncar_mps
+                  Modified: false
+                      Host: casper-pbs
+                NumWorkers: 20
+                NumThreads: 1
+              ProcsPerNode: 2
+
+        JobStorageLocation: /glade/u/home/yuxinz/BIGMACS_MacOS
+         ClusterMatlabRoot: /glade/u/apps/opt/matlab/R2021b
+           OperatingSystem: unix
+           SubmitArguments: -A UCSB0015 -q casper -l walltime=12:00:00
+          ResourceTemplate: -l select=1:ncpus=^N^:mpiprocs=^N^
+                RcpCommand: scp
+                RshCommand: ssh
+   CommunicatingJobWrapper: unix
+   RequiresOnlineLicensing: false
+
+    Associated Jobs: 
+
+            Number Pending: 0
+             Number Queued: 0
+            Number Running: 0
+           Number Finished: 0
+
+>> [Warning: Error executing the PBS command 'qstat -f "4546975.casper-pbs"'. The
+reason given is
+ ] 
+>> >> >> >> --- Start Diary ---
+--- End Diary ---
+>> Time elapsed = 53 s
+MATLAB is selecting SOFTWARE OPENGL rendering.
+OMP: Warning #181: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2022 The MathWorks, Inc.
+                  R2022a (9.12.0.1884302) 64-bit (glnxa64)
+                             February 16, 2022
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> >> 
+c = 
+
+ Local Cluster
+
+    Properties: 
+
+                   Profile: local
+                  Modified: false
+                      Host: crhtc38
+                NumWorkers: 20
+                NumThreads: 1
+
+        JobStorageLocation: /glade/u/home/yuxinz/.matlab/local_cluster_jobs/R2022a
+   RequiresOnlineLicensing: false
+
+    Associated Jobs: 
+
+            Number Pending: 0
+             Number Queued: 0
+            Number Running: 4
+           Number Finished: 16
+
+>> >> >> >> >> --- Start Diary ---
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+
+--- End Diary ---
+>> Time elapsed = 79 s

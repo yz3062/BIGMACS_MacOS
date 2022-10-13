@@ -4,8 +4,8 @@
 #PBS -l walltime=12:00:00
 #PBS -q casper
 #PBS -j oe
-#PBS -o local.log
-#PBS -l select=1:ncpus=20:mpiprocs=20:mem=40GB
+#PBS -o report_demo.log
+#PBS -l select=1:ncpus=20:mpiprocs=20:mem=15GB
 
 # The following script is not distributed; it uses threads
 # and so this PBS job should only ever request a single node
@@ -17,13 +17,9 @@ export NUMWORKERS=$(wc -l $PBS_NODEFILE | cut -d' ' -f1)
 
 SECONDS=0
 matlab -nodesktop -nosplash << EOF
-% Add cluster profile if not already present
-if ~any(strcmp(parallel.clusterProfiles, 'ncar_mps'))
-    ncar_mps = parallel.importProfile('/glade/u/apps/opt/matlab/parallel/ncar_mps.mlsettings');
-end
 
 % Start PBS cluster and submit job with custom number of workers
-c = parcluster('ncar_mps')
+c = parcluster('local')
 j = batch(c,"main", 'Pool', $((NUMWORKERS - 1)));
 
 % Wait for the job to finish, then get output

@@ -4,11 +4,8 @@
 #PBS -l walltime=24:00:00
 #PBS -q casper
 #PBS -j oe
-#PBS -o R6.log
-#PBS -l select=1:ncpus=24:mpiprocs=24:mem=96GB
-
-# The following script is not distributed; it uses threads
-# and so this PBS job should only ever request a single node
+#PBS -o R7.log
+#PBS -l select=1:ncpus=24:mpiprocs=24:mem=10GB
 
 module load matlab
 
