@@ -32,7 +32,13 @@ LR04 = LR04_fetching_func.fetch_d18O()
 #%% plot
 fig, axes = plt.subplots(1,1, sharex=False)
 
-axes.plot(stack['age(kyr)'], stack['mean(permil)'])
+axes.plot(stack['age(kyr)'], stack['mean(permil)'], label='BIGMACS')
+axes.fill_between(stack['age(kyr)'],
+                  stack['mean(permil)']+2*stack['sigma(permil)'],
+                  stack['mean(permil)']-2*stack['sigma(permil)'],
+                  alpha=0.3,
+                  label='BIGMACS 2sigma')
+
 axes.plot(LR04.index/1000, LR04, label='LRO4', color='k')
 axes.set_xlim((stack['age(kyr)'].min(),stack['age(kyr)'].max()))
 axes.invert_yaxis()
