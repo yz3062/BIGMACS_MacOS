@@ -5,7 +5,7 @@
 #PBS -q casper
 #PBS -j oe
 #PBS -o R7.log
-#PBS -l select=1:ncpus=36:mpiprocs=36:mem=144GB
+#PBS -l select=1:ncpus=36:mpiprocs=36:mem=360GB
 
 module load matlab
 
