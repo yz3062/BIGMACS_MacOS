@@ -1,18 +1,18 @@
 #!/bin/bash  -l
-#SBATCH --nodes=1 --ntasks-per-node 10
-#SBATCH --mem-per-cpu=4G # Use more memory
-#  this is asking for 1 node, with 10 cores (i.e. a Serial job)
+#SBATCH --job-name="matlab_BIGMACS"
+#SBATCH --output=%x-%j.log
+#SBATCH --time=72:00:00
+#SBATCH --mail-user=yuxin_zhou@ucsb.edu
+#SBATCH --mail-type=start,end
+#SBATCH --nodes=1 --ntasks-per-node 40
+#  this is asking for 1 node, with 1 core (i.e. a Serial job)
 #     the -l is needed on first line if you want to use modules
 
-# Specify an output file
-#SBATCH -o run.out
-#SBATCH -e run_error.out
-
-module load matlab/R2021a-fasrc01
+module load MatLab/R2021b
 
 cd $SLURM_SUBMIT_DIR
 
 /bin/hostname
 
-matlab -nojvm -nodesktop -nosplash < main.m
+matlab -nodisplay -nodesktop -nospxlash < main.m
 
