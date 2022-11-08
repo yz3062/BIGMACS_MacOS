@@ -4,8 +4,10 @@
 #PBS -l walltime=24:00:00
 #PBS -q casper
 #PBS -j oe
-#PBS -o R10.log
-#PBS -l select=1:ncpus=36:mpiprocs=36:mem=360GB
+#PBS -o R11.log
+#PBS -l select=1:ncpus=36:mpiprocs=36:mem=720GB
+#PBS -m abe
+#PBS -M yuxin_zhou@ucsb.edu
 
 module load matlab
 
