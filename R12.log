@@ -1,0 +1,31 @@
+node4.podcluster
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2021 The MathWorks, Inc.
+             R2021b Update 1 (9.11.0.1809720) 64-bit (glnxa64)
+                              November 2, 2021
+
+[Warning: Unrecognized command line option: nospxlash.] 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 40).
+>> Number of workers: 40
+>> >> >> >> >> >> >> -------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+   Done.
+#  Stacking algorithm is now running...
+#  Iteration 1:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [32.94646      37.88196      25.58047      8.569971      38.37731      19.92212      15.57503      14.73724      22.42317      13.51391      23.17133      38.84157      11.09371      36.63148      24.07758      61.64552      129.6438      17.66495      14.44416      6.179731      41.69349      3.128745      90.74293      58.88249      4.268405      66.99442      36.49217      8.969851      6.379179].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.099676     0.69226      1.1758    -0.10762    0.090562     0.89002   -0.044994     0.52406   -0.030304     0.31652    -0.58536     0.82507    0.087642     0.73108    0.051616      2.0979      1.4515   -0.015175     0.16681    0.012308     0.19987   -0.054786      6.6259     -1.0433    -0.25823      1.8375     0.39757     0.11868     0.14273].
