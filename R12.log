@@ -29,3 +29,6 @@ Connected to the parallel pool (number of workers: 40).
    Ages are sampled.
    Parameters are updated.
    Updating parameters makes the average log-likelihood of samples increased by [0.099676     0.69226      1.1758    -0.10762    0.090562     0.89002   -0.044994     0.52406   -0.030304     0.31652    -0.58536     0.82507    0.087642     0.73108    0.051616      2.0979      1.4515   -0.015175     0.16681    0.012308     0.19987   -0.054786      6.6259     -1.0433    -0.25823      1.8375     0.39757     0.11868     0.14273].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.083611     -0.5254     0.45043   -0.011501     0.34766    -0.25057   -0.005411     0.11179    -0.15535     0.16007     0.24754   -0.022619    -0.01725     0.13407   -0.046308     0.20187    0.045216     0.38191      0.1725   0.0023517   -0.066689    0.011929    -0.30228    0.015351  -0.0085027     0.15249     0.11718    0.026857     0.12479].

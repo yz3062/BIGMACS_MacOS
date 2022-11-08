@@ -23,3 +23,6 @@ Connected to the parallel pool (number of workers: 40).
    Done.
 #  Stacking algorithm is now running...
 #  Iteration 1:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [22.24799       17.8033      77.87247      83.67276      43.22967      115.0026      2.836561      101.1492      76.16948        10.096      3.066731      12.38785      91.01588      113.6114      46.16294      78.65351      58.28773      35.24142       37.1481      281.8187      12.99165].
