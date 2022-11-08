@@ -1,6 +1,6 @@
 #!/bin/bash  -l
 #SBATCH --job-name="matlab_BIGMACS"
-#SBATCH --output=%x-%j.log
+#SBATCH --output=R11.log
 #SBATCH --time=72:00:00
 #SBATCH --mail-user=yuxin_zhou@ucsb.edu
 #SBATCH --mail-type=start,end

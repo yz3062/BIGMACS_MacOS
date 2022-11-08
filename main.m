@@ -5,5 +5,6 @@ inputFile = 'R11';
 
 % inputMode = 'age_model_construction';
 inputMode = 'stack_construction';
-
+tic
 BIGMACS(inputFile,inputMode,'show');
+toc
