@@ -384,6 +384,7 @@ else
             MargLik(SAM_A(1,:)<data_full.min) = -inf;
         end
         
+	disp(data_full.name);
         WW(1,:) = MargLik;
         
         % Z == 2:
