@@ -461,7 +461,8 @@ else
         if ~isnan(data_full.min)
             MargLik(SAM_A(2,:)<data_full.min) = -inf;
         end
-        
+	
+	disp(data_full.name);        
         WW(2,:) = MargLik;
         
         % Z == 3:
