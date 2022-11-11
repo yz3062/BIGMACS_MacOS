@@ -384,7 +384,11 @@ else
             MargLik(SAM_A(1,:)<data_full.min) = -inf;
         end
         
-	disp(data_full.name);
+%         size_MargLik = size(MargLik);
+%         if size_MargLik(1) == 0
+%             disp(data_full.name);
+%         end
+%         disp(d18O(1));
         WW(1,:) = MargLik;
         
         % Z == 2:
@@ -461,8 +465,11 @@ else
         if ~isnan(data_full.min)
             MargLik(SAM_A(2,:)<data_full.min) = -inf;
         end
-	
-	disp(data_full.name);        
+        
+%         size_MargLik = size(MargLik);
+%         if size_MargLik(1) == 0
+%             disp(data_full.name);  
+%         end
         WW(2,:) = MargLik;
         
         % Z == 3:
