@@ -48,6 +48,8 @@ axes.legend()
 axes.set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes.set_xlabel('Age (ka BP)')
 
+axes.set_title('Atlantic stack')
+
 fig.set_size_inches(6,4)
 
 plt.savefig('Stack_LR04.png', dpi=500)
