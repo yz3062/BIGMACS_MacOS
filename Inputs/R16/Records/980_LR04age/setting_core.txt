@@ -1,0 +1,2 @@
+particle_bandwidth: 13.907133333333334
+smoothness_bandwidth: 39.73466666666666
