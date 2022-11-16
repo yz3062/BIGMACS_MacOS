@@ -130,3 +130,47 @@ Error in run (line 91)
 evalin('caller', strcat(script, ';'));
 } 
 Time elapsed = 61 s
+MATLAB is selecting SOFTWARE OPENGL rendering.
+OMP: Warning #181: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2022 The MathWorks, Inc.
+                  R2022a (9.12.0.1884302) 64-bit (glnxa64)
+                             February 16, 2022
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 36).
+Number of workers: 36
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+{Error using randsample
+W must contain non-negative values with at least one positive value.
+
+Error in getProposal (line 90)
+index = randsample(3*S,nsamples,true,WW);
+
+Error in initializeAlignment (line 7)
+parfor ll = 1:L
+
+Error in Stacking (line 12)
+QQ = initializeAlignment(data,data_part,param,target,setting);
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+
+Error in main (line 8)
+BIGMACS(inputFile,inputMode,'show');
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+} 
+Time elapsed = 49 s
