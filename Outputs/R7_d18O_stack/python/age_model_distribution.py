@@ -16,7 +16,7 @@ mat_summary = mat['summary']
 # Find ODP928 age samples
 ODP928_age_samples = mat_summary['age_samples'][mat_summary['name']==['ODP928']][0]
 ODP928_depths = mat_summary['depth'][mat_summary['name']==['ODP928']][0]
-
+plt.figure()
 for i in range(1000):
     plt.plot(ODP928_age_samples[:,i], ODP928_depths, color='k', alpha=0.1)
 
@@ -24,8 +24,8 @@ for i in range(1000):
 
 #%% histogram for 60 m
 import numpy as np
-import matplotlib.pyplot as plt
 
+plt.figure()
 n, bins, patches = plt.hist(ODP928_age_samples[(ODP928_depths==57.99).flatten(), :].flatten(),
           bins=50,
           density=True,
@@ -36,4 +36,4 @@ n, bins, patches = plt.hist(ODP928_age_samples[(ODP928_depths==57.99).flatten(),
 plt.xlabel('Age (ka)')
 plt.ylabel('Frequency')
 plt.title('Age estimate distribution. ODP 928. Depth = 57.99 m')
-plt.savefig('ODP928_5799m_age_distribution.png', dpi=500)
+# plt.savefig('ODP928_5799m_age_distribution.png', dpi=500)
