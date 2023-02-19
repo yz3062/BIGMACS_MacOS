@@ -1,2 +1,3 @@
-particle_bandwidth: 47.259800000000006
-smoothness_bandwidth: 68
+particle_bandwidth: 7
+smoothness_bandwidth: 20
+min_resolution: inf
