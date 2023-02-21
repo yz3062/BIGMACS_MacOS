@@ -385,9 +385,9 @@ else
         end
         
         size_MargLik = size(MargLik);
-        if size_MargLik(1) == 0
-            disp(data_full.name);
-        end
+%         if size_MargLik(1) == 0
+%             disp(data_full.name);
+%         end
 %         disp(d18O(1));
         WW(1,:) = MargLik;
         

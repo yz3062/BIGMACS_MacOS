@@ -73,6 +73,9 @@ W = cell(N,1);
 % iteration:
 for nn = 1:N-1
     n = N-nn;
+%     if strcmp(data_full.name,'658_LR04age')
+%         disp('pause');
+%     end
     [A{n},W{n}] = Proposal_init(W{n+1},A{n+1},depth_diff(n),d18O(n,:),C14{n},Age_Info(n,:),data,param,S,target,data_type,n);
 end
 
