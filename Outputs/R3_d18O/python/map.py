@@ -32,4 +32,4 @@ ax1.scatter(-42.9, 3.72, label='ODP926', transform=ccrs.PlateCarree())
 
 ax1.legend(loc=4)
 
-plt.savefig('map.png', dpi=500)
+# plt.savefig('map.png', dpi=500)
