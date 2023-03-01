@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jan 26 13:56:26 2023
+Created on Thu Feb 23 15:58:54 2023
 
 @author: zhou
 """
@@ -23,48 +23,37 @@ from matplotlib import gridspec
 sns.set(font='Arial',palette='husl',style='whitegrid',context='paper')
 
 stack_1_path = '../stack.txt'
+# stack = scipy.io.loadmat(stack_path)
 stack_1 = pd.read_table(stack_1_path, delimiter=' ')
+# stack_1.set_index('age(kyr)', inplace=True)
 
-stack_2_path = '../../R38_d18O_stack/stack.txt'
+stack_2_path = '../../R20_d18O_stack/stack.txt'
 stack_2 = pd.read_table(stack_2_path, delimiter=' ')
+# stack_2.set_index('age(kyr)', inplace=True)
 
-stack_3_path = '../../R39_d18O_stack/stack.txt'
+stack_3_path = '../../R18_d18O_stack/stack.txt'
 stack_3 = pd.read_table(stack_3_path, delimiter=' ')
+# stack_3.set_index('age(kyr)', inplace=True)
 
-stack_4_path = '../../R40_d18O_stack/stack.txt'
+stack_4_path = '../../R16_d18O_stack/stack.txt'
 stack_4 = pd.read_table(stack_4_path, delimiter=' ')
+# stack_4.set_index('age(kyr)', inplace=True)
 
-stack_5_path = '../../R41_d18O_stack/stack.txt'
+stack_5_path = '../../R7_d18O_stack/stack.txt'
 stack_5 = pd.read_table(stack_5_path, delimiter=' ')
+# stack_5.set_index('age(kyr)', inplace=True)
 
-stack_neptune = pd.concat([stack_1, stack_2, stack_3, stack_4, stack_5])
-stack_neptune = stack_neptune.groupby('age(kyr)').mean()
+stack = pd.concat([stack_1, stack_2, stack_3, stack_4, stack_5])
+stack = stack.groupby('age(kyr)').mean()
 
-LR04 = LR04_fetching_func.fetch_d18O()
+# LR04 = LR04_fetching_func.fetch_d18O()
 
 insolation = Milankovitch_fetching_func.fetch_65N_summer_insolation()
 
 ProbStack = Probstack_fetching_func.fetch_d18O()
 
-stack_1_path = '../../R21_d18O_stack/stack.txt'
-# stack = scipy.io.loadmat(stack_path)
-stack_1 = pd.read_table(stack_1_path, delimiter=' ')
-
-stack_2_path = '../../R20_d18O_stack/stack.txt'
-stack_2 = pd.read_table(stack_2_path, delimiter=' ')
-
-stack_3_path = '../../R18_d18O_stack/stack.txt'
-stack_3 = pd.read_table(stack_3_path, delimiter=' ')
-
-stack_4_path = '../../R16_d18O_stack/stack.txt'
-stack_4 = pd.read_table(stack_4_path, delimiter=' ')
-
-stack_5_path = '../../R7_d18O_stack/stack.txt'
-stack_5 = pd.read_table(stack_5_path, delimiter=' ')
-
-stack = pd.concat([stack_1, stack_2, stack_3, stack_4, stack_5])
-stack = stack.groupby('age(kyr)').mean()
-
+ProbStack_upper = Probstack_fetching_func.fetch_d18O_upper()
+ProbStack_lower = Probstack_fetching_func.fetch_d18O_lower()
 #%% plot
 fig, axes = plt.subplots(4,1, sharex=False, sharey=False)
 gs  = gridspec.GridSpec(4, 1, height_ratios=[0.3, 1, 0.3, 1])
@@ -72,58 +61,53 @@ axes = [plt.subplot(gs[0]),
         plt.subplot(gs[1]),
         plt.subplot(gs[2]),
         plt.subplot(gs[3])]
-# BIAGMACS Neptune
-axes[1].plot(stack_neptune.index, stack_neptune['mean(permil)'], label='BIGMACS Neptune', alpha=0.8, color='C0')
-axes[1].fill_between(stack_neptune.index,
-                  stack_neptune['mean(permil)']+2*stack_neptune['sigma(permil)'],
-                  stack_neptune['mean(permil)']-2*stack_neptune['sigma(permil)'],
-                  alpha=0.3,
-                  label='BIGMACS 2sigma',
-                  color='C0')
-
-# BIAGMACS no Neptune
-axes[1].plot(stack.index, stack['mean(permil)'], label='BIGMACS', alpha=0.8, color='C2')
+# BIAGMACS
+axes[1].plot(stack.index, stack['mean(permil)'], label='BIGMACS', alpha=0.8, color='C0')
 axes[1].fill_between(stack.index,
                   stack['mean(permil)']+2*stack['sigma(permil)'],
                   stack['mean(permil)']-2*stack['sigma(permil)'],
                   alpha=0.3,
                   label='BIGMACS 2sigma',
-                  color='C2')
+                  color='C0')
 # # LR04
 # axes[1].plot(LR04.index/1000, LR04, label='LRO4', color='k', zorder=1, alpha=0.5)
-# # ProbStack
-# axes[1].plot(ProbStack.index/1000, ProbStack, label='ProbStack', color='C3', zorder=1, alpha=0.5)
+# ProbStack
+axes[1].plot(ProbStack.index/1000, ProbStack, label='ProbStack', color='C3', zorder=1, alpha=0.5)
+axes[1].fill_between(ProbStack_upper.index/1000,
+                  ProbStack_upper,
+                  ProbStack_lower,
+                  alpha=0.3,
+                  label='ProbStack 2sigma',
+                  color='C3')
+# # LR04
 axes[1].set_xlim((0, 1350))
 axes[1].invert_yaxis()
 
 axes[1].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[1].set_ylim(bottom=5.7)
 
-# BIAGMACS Neptune
-l1 = axes[3].plot(stack_neptune.index, stack_neptune['mean(permil)'], label='BIGMACS Neptune', alpha=0.8, color='C0')
-axes[3].fill_between(stack_neptune.index,
-                  stack_neptune['mean(permil)']+2*stack_neptune['sigma(permil)'],
-                  stack_neptune['mean(permil)']-2*stack_neptune['sigma(permil)'],
-                  alpha=0.3,
-                  label='BIGMACS 2sigma',
-                  color='C0')
-
-# BIGMACS no Neptune
-l2 = axes[3].plot(stack.index, stack['mean(permil)'], label='BIGMACS', alpha=0.8, color='C2')
+# BIGMACS
+l1 = axes[3].plot(stack.index, stack['mean(permil)'], label='BIGMACS', alpha=0.8, color='C0')
 axes[3].fill_between(stack.index,
                   stack['mean(permil)']+2*stack['sigma(permil)'],
                   stack['mean(permil)']-2*stack['sigma(permil)'],
                   alpha=0.3,
                   label='BIGMACS 2sigma',
-                  color='C2')
+                  color='C0')
 # # LR04
 # l2 = axes[3].plot(LR04.index/1000, LR04, label='LR04', color='k', zorder=1, alpha=0.5)
-# # ProbStack
-# l3 = axes[3].plot(ProbStack.index/1000, ProbStack, label='ProbStack', color='C3', zorder=1, alpha=0.5)
+# ProbStack
+l3 = axes[3].plot(ProbStack.index/1000, ProbStack, label='ProbStack', color='C3', zorder=1, alpha=0.5)
+axes[3].fill_between(ProbStack_upper.index/1000,
+                  ProbStack_upper,
+                  ProbStack_lower,
+                  alpha=0.3,
+                  label='ProbStack 2sigma',
+                  color='C3')
 axes[3].set_xlim((1350, 2700))
 axes[3].invert_yaxis()
 
-axes[3].legend(handles=[l1[0], l2[0]], ncol=2, loc=[0.6,0.11])
+axes[3].legend(handles=[l1[0], l3[0]], ncol=2, loc=[0.3,0.81])
 
 axes[3].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[3].set_xlabel('Age (ka BP)')
@@ -203,5 +187,6 @@ pos = axes[2].get_position()
 pos.y0 -= 0.03
 pos.y1 -= 0.03
 axes[2].set_position(pos)
-plt.savefig('Stitched_neptune_before_and_after_stack.png', dpi=500)
-# plt.savefig('Stitched_neptune_before_and_after_stack.pdf')
+plt.savefig('Stitched_stack_insolation_ProbStack_annotated.png', dpi=700)
+# plt.savefig('Stitched_stack_LR04_insolation_ProbStack.pdf')
+

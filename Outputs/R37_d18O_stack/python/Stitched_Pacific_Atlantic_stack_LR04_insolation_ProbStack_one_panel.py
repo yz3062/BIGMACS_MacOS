@@ -51,7 +51,7 @@ l4 = axes[1].plot(Atlantic_stack.index, Atlantic_stack['mean(permil)'], label='B
 #                   label='BIGMACS 2sigma',
 #                   color='C4')
 # LR04
-l2 = axes[1].plot(LR04.index/1000, LR04, label='LRO4', color='gray', zorder=1, alpha=0.5)
+# l2 = axes[1].plot(LR04.index/1000, LR04, label='LRO4', color='k', zorder=1, alpha=0.5)
 # ProbStack
 # l3 = axes[1].plot(ProbStack.index/1000, ProbStack, label='ProbStack', color='C3', zorder=1, alpha=0.5)
 axes[1].set_xlim((0, 2700))
@@ -76,7 +76,7 @@ axes[1].set_ylim(bottom=5.7)
 # axes[3].set_xlim((1350, 2700))
 # axes[3].invert_yaxis()
 
-axes[1].legend(handles=[l2[0], l1[0], l4[0]], ncol=3, loc=[0.4,0.11])
+axes[1].legend(handles=[l1[0], l4[0]], ncol=2, loc=[0.4,0.11])
 
 # axes[3].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 # axes[3].set_xlabel('Age (ka BP)')
@@ -157,4 +157,4 @@ axes[0].set_position(pos)
 # pos.y1 -= 0.03
 # axes[2].set_position(pos)
 # plt.savefig('Stitched_stack_LR04_insolation.png', dpi=500)
-plt.savefig('Pacific_Atlantic_stack_LR04_insolation_ProbStack.png', dpi=700)
+# plt.savefig('Pacific_Atlantic_stack_LR04_insolation_ProbStack.png', dpi=500)
