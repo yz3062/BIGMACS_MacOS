@@ -5,11 +5,3 @@ inputFile = 'R43';
 inputMode = 'stack_construction';
 
 BIGMACS(inputFile,inputMode,'show');
-
-inputFile = 'R44';
-
-BIGMACS(inputFile,inputMode,'show');
-
-inputFile = 'R45';
-
-BIGMACS(inputFile,inputMode,'show');
