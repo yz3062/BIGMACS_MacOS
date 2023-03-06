@@ -63,4 +63,4 @@ plt.legend()
 plt.ylabel('LR04 and new stack age difference (kyr)')
 plt.xlabel('Age (ka)')
 
-plt.savefig('aligned_LR04_age_diff_only.png', dpi=500)
+# plt.savefig('aligned_LR04_age_diff_only.png', dpi=500)
