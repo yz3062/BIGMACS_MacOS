@@ -84,7 +84,15 @@ for i in range(len(df_Pacific['name'])):
     age = ma.squeeze(df_Pacific.iloc[i]['median'])
     age = age[~d18O.mask]
     d18O = d18O[~d18O.mask]
-    axes[0].plot(age, d18O, alpha=0.3)
+    if '849' in df_Pacific.iloc[i]['name'][0]:
+        axes[0].plot(age, d18O, linestyle='--', alpha=1)
+    elif '677' in df_Pacific.iloc[i]['name'][0]:
+        axes[0].plot(age, d18O, linestyle='--', alpha=1)
+    # elif '1123' in df_Pacific.iloc[i]['name'][0]:
+    #     axes[0].plot(age, d18O, linestyle='--', alpha=1)
+    else:
+        axes[0].plot(age, d18O, alpha=0.3)
+    # print(df_Pacific.iloc[i]['name'][0] + ': ' + np.array2string(d18O[(age>1800) & (age<1825)]))
 for i in range(len(df_Atlantic['name'])):
     d18O = ma.fix_invalid(df_Atlantic.iloc[i]['d18O']).mean(axis=1)
     shift = ma.squeeze(df_Atlantic.iloc[i]['d18O_shift'])
@@ -112,4 +120,4 @@ axes[1].set_xlabel('Age (ka BP)')
 
 fig.set_size_inches(6,4)
 
-plt.savefig('Raw_d18O_18ma_zoom.png', dpi=700)
+# plt.savefig('Raw_d18O_18ma_zoom.png', dpi=700)
