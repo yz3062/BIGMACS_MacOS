@@ -1,0 +1,39 @@
+node104.podcluster
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2021 The MathWorks, Inc.
+             R2021b Update 1 (9.11.0.1809720) 64-bit (glnxa64)
+                              November 2, 2021
+
+[Warning: Unrecognized command line option: nospxlash.] 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 40).
+>> Number of workers: 40
+>> >> >> >> >> -------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+{Error using Proposal_init (line 306)
+Operands to the logical and (&&) and or (||) operators must be convertible to
+logical scalar values.
+
+Error in getProposal (line 80)
+    [A{n},W{n}] = Proposal_init(W{n+1},A{n+1},depth_diff(n),d18O(n,:),C14{n},Age_Info(n,:),data,param,S,target,data_type,n);
+
+Error in initializeAlignment (line 7)
+parfor ll = 1:L
+
+Error in Stacking (line 12)
+QQ = initializeAlignment(data,data_part,param,target,setting);
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+} 
+>> 
