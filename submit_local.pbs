@@ -6,7 +6,7 @@
 #PBS -j oe
 #PBS -k eod
 #PBS -o R48.log
-#PBS -l select=1:ncpus=36:mpiprocs=36:mem=240GB
+#PBS -l select=1:ncpus=36:mpiprocs=36:mem=300GB
 #PBS -m abe
 #PBS -M yuxin_zhou@ucsb.edu
 
