@@ -20,7 +20,7 @@ import seaborn as sns
 # import scipy.io
 from matplotlib import gridspec
 
-sns.set(font='Arial',palette='husl',style='whitegrid',context='paper')
+sns.set(font='Arial',palette='husl',style='whitegrid',context='talk')
 
 stack_1_path = '../../R43_d18O_stack/stack.txt'
 stack_1 = pd.read_table(stack_1_path, delimiter=' ')
@@ -55,10 +55,10 @@ axes = [plt.subplot(gs[0]),
 l1 = axes[1].plot(Pacific_stack.index, Pacific_stack['mean(permil)'], label='BIGMACS Pacific', alpha=0.8, color='C4')
 l4 = axes[1].plot(Atlantic_stack.index, Atlantic_stack['mean(permil)'], label='BIGMACS Atlantic', alpha=0.8, color='C5')
 
-l2 = axes[1].plot(LR04.index/1000, LR04, label='LRO4', color='gray', zorder=1, alpha=0.5)
+l2 = axes[1].plot(LR04.index/1000, LR04, label='LR04', color='gray', zorder=1, alpha=0.5)
 
-axes[1].axvline(300, color='C4', linestyle='--')
-axes[1].axvline(700, color='C5', linestyle='--')
+# axes[1].axvline(300, color='C4', linestyle='--')
+# axes[1].axvline(700, color='C5', linestyle='--')
 
 axes[1].axvline(1750, color='r', linestyle='--')
 axes[1].axvline(1950, color='r', linestyle='--')
@@ -69,7 +69,7 @@ axes[1].invert_yaxis()
 axes[1].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[1].set_ylim(bottom=5.7)
 
-axes[1].legend(handles=[l2[0], l1[0], l4[0]], ncol=3, loc=[0.4,0.11])
+axes[1].legend(handles=[l2[0], l1[0], l4[0]], ncol=3, loc=[0.3,0.11])
 
 fig.set_size_inches(15,8)
 
@@ -125,4 +125,4 @@ pos.y1 -= 0.03
 axes[0].set_position(pos)
 
 # plt.savefig('Stitched_stack_LR04_insolation.png', dpi=500)
-# plt.savefig('Stitched_long_Pacific_Atlantic_stack_LR04_insolation.png', dpi=700)
+plt.savefig('Stitched_long_Pacific_Atlantic_stack_LR04_insolation.png', dpi=500)

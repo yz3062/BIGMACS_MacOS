@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Mar 13 14:32:58 2023
+Created on Thu Apr  6 10:45:33 2023
 
 @author: zhou
 """
@@ -10,10 +10,15 @@ import pandas as pd
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.set(font='Arial',palette='husl',style='whitegrid',context='paper')
 
 # read excel. Remove columns without # cycles
 df = pd.read_excel('core_info_18ma_cycles.xlsx', sheet_name='18ma_cycles')
 df.dropna(subset=['Num cycles'], inplace=True)
+df_1_cycle = df[df['Num cycles'] == 1]
+df_2_or_3_cycles = df[df['Num cycles'] > 1]
 
 # set up map
 ax1 = plt.subplot(1,1,1,projection=ccrs.PlateCarree())
@@ -23,6 +28,14 @@ ax1.gridlines(draw_labels=False)
 ax1.add_feature(cfeature.LAND, zorder=2, edgecolor='None')
 
 # plot data
-ax1.scatter(df['Longitude'], df['Latitude'], c=df['Num cycles'], alpha=0.5)
+ax1.scatter(df_1_cycle['Longitude'],
+            df_1_cycle['Latitude'],
+            c='C0',
+            label='2 cycles')
+ax1.scatter(df_2_or_3_cycles['Longitude'],
+            df_2_or_3_cycles['Latitude'],
+            c='C1',
+            label='3 or more cycles')
 
-# plt.savefig('map_18ma_cycles.png', dpi=500)
+plt.legend()
+plt.savefig('map_18ma_cycles_binary.png', dpi=500)

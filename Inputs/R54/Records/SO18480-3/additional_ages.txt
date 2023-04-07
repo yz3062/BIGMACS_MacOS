@@ -1,0 +1,4 @@
+depth	age	distribution	confidence
+0.015	0.12	1	1
+7.285   75  1   1
+16.705	307.564	1	1

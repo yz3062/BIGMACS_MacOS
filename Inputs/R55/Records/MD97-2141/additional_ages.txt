@@ -1,0 +1,5 @@
+depth	age	uncertainty	mode
+0	4.29	1	1
+9.11	63	1	1
+12.3    92.5    1	1
+16.38	140	1	5
