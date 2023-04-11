@@ -1,0 +1,81 @@
+MATLAB is selecting SOFTWARE OPENGL rendering.
+OMP: Warning #181: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2022 The MathWorks, Inc.
+                  R2022a (9.12.0.1884302) 64-bit (glnxa64)
+                             February 16, 2022
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 10).
+Number of workers: 10
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+   Done.
+#  Stacking algorithm is now running...
+#  Iteration 1:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [120.4403      71.00318      189.7634      19.43538      101.1896      18.32055      13.34859      143.6182      294.4515      66.13215       29.4343      336.1494      169.0357      235.6961      330.2038].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.12836   -0.016469   -0.086737      0.0223    0.053677    0.048231   -0.023941     0.15103     0.17256     0.15018    0.082906     0.19053      1.0336     0.51549     0.11685].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.057687   0.0078553    0.095214    0.046428   -0.013171    0.016152   -0.026392     0.18614   -0.018722 -0.00024845   -0.011053   0.0047367      0.1047    -0.28548     0.22266].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.0033035   -0.061736    0.070318    0.051591    0.086517    0.013009    0.004907    0.098064     0.04378  -0.0081022    0.013118   -0.021383     -0.1388      1.8598     0.09918].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.056971    0.046903  -0.0045449    -0.19104   -0.029593    0.042973    0.013824    0.019702   -0.022242  -0.0085249  -0.0071631   0.0052123     0.10991     0.12246    0.015114].
+   Records are aligned to the target stack.
+   Iteration 1/10...
+   Iteration 2/10...
+   Iteration 3/10...
+   Iteration 4/10...
+   Iteration 5/10...
+   Iteration 6/10...
+   Iteration 7/10...
+   Iteration 8/10...
+   Iteration 9/10...
+   Iteration 10/10...
+{License checkout failed.
+License Manager Error -4
+Maximum number of users for Statistics_Toolbox reached.
+Try again later.
+
+Troubleshoot this issue by visiting:
+https://www.mathworks.com/support/lme/R2022a/4
+
+Diagnostic Information:
+Feature: Statistics_Toolbox
+License path:
+28518@128.117.177.41:/glade/u/home/yuxinz/.matlab/R2022a_licenses:/glade/u/apps/opt/matlab/R2022a/licenses/license.dat:/glade/u/apps/opt/matlab/R2022a/licenses/network.lic
+Licensing error: -4,132.
+
+Error in updateStack (line 148)
+    STACK_SAMPLE(:,m,1) = MU(:,m) + mvnrnd(zeros(1,T),SS)';
+
+Error in Stacking (line 22)
+    [param,target] = updateStack(data,samples,param,target,setting);
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+
+Error in main (line 8)
+BIGMACS(inputFile,inputMode,'show');
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+} 
+Time elapsed = 3868 s
