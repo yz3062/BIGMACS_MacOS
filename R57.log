@@ -1,0 +1,36 @@
+node7.podcluster
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2021 The MathWorks, Inc.
+             R2021b Update 1 (9.11.0.1809720) 64-bit (glnxa64)
+                              November 2, 2021
+
+[Warning: Unrecognized command line option: nospxlash.] 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 40).
+>> Number of workers: 40
+>> >> >> >> >> >> -------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+{Error using matlab.internal.math.interp1
+Sample points must be unique.
+
+Error in interp1 (line 188)
+        VqLite = matlab.internal.math.interp1(X,V,method,method,Xqcol);
+
+Error in getInitialTarget (line 57)
+    new_stack(:,2) = interp1(target.stack(:,1),target.stack(:,2),age);
+
+Error in Stacking (line 5)
+target = getInitialTarget(inputFile,setting,'stacking');
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+} 
+>> 
