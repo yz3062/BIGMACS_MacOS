@@ -1,0 +1,42 @@
+node101.podcluster
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2021 The MathWorks, Inc.
+             R2021b Update 1 (9.11.0.1809720) 64-bit (glnxa64)
+                              November 2, 2021
+
+[Warning: Unrecognized command line option: nospxlash.] 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 40).
+>> Number of workers: 40
+>> >> >> >> >> >> -------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+   Done.
+#  Stacking algorithm is now running...
+#  Iteration 1:
+{Error using Proposal_PS (line 392)
+Unable to perform assignment because the size of the left side is 1-by-500 and
+the size of the right side is 0-by-500.
+
+Error in Particle_Smoothing (line 43)
+    [A{n},W{n}] = Proposal_PS(W{n+1},A{n+1},depth_diff(n),d18O(n,:),C14{n},Age_Info(n,:),data_full,param,target,mode,QQ(n,:),data.ACC_MODEL,data.ACC_CONTRACTION,data.ACC_STEADY,data.ACC_EXPANSION);
+
+Error in getAlignment (line 25)
+    parfor ll = 1:L
+
+Error in Stacking (line 20)
+    [data,samples,param] = getAlignment(data,data_part,QQ,param,target,setting,'stacking');
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+} 
+>> 
