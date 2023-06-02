@@ -122,4 +122,4 @@ axes[1].set_xlabel('Age (ka BP)')
 
 fig.set_size_inches(6,4)
 
-plt.savefig('Raw_d18O_849_928_18ma_zoom.png', dpi=700)
+# plt.savefig('Raw_d18O_849_928_18ma_zoom.png', dpi=700)
