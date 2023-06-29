@@ -29,7 +29,7 @@ from scipy import interpolate
 
 sns.set(font='Arial',palette='husl',style='ticks',context='talk')
 
-xlim_left = 1750
+xlim_left = 1650
 xlim_right = 1950
 
 # read pacific data

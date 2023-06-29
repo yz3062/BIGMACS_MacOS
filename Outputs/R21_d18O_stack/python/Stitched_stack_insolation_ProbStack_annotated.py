@@ -115,43 +115,53 @@ axes[3].set_xlabel('Age (ka BP)')
 
 fig.set_size_inches(10,8)
 
-#%% plot geomagnetic chrons
+#%% draw geomagnetic chrons
+# rectangle height
 bar_height = 0.25
+# rectangle bottom which is the y lower limit
 y_lim_bottom = axes[1].get_ylim()[0]
+# draw rectangle
 axes[1].add_patch(patches.Rectangle((0, y_lim_bottom-bar_height),
                                     773,
                                     bar_height,
                                     facecolor='k',
                                     edgecolor='k'))
+# label rectangle
 axes[1].text(773/2, y_lim_bottom-bar_height/2, 'Brunhes',
              horizontalalignment='center',
              verticalalignment='center',
              color='w')
+# draw rectangle
 axes[1].add_patch(patches.Rectangle((773, y_lim_bottom-bar_height),
                                     1350-773,
                                     bar_height,
                                     facecolor='None',
                                     edgecolor='k'))
+# label rectangle
 axes[1].text((1350+773)/2, y_lim_bottom-bar_height/2, 'Matuyama',
              horizontalalignment='center',
              verticalalignment='center',
              color='k')
 y_lim_bottom = axes[3].get_ylim()[0]
 bar_height = 0.23 # a shorter bar height cuz plot is broader
+# draw rectangle
 axes[3].add_patch(patches.Rectangle((1350, y_lim_bottom-bar_height),
                                     2595-1350,
                                     bar_height,
                                     facecolor='None',
                                     edgecolor='k'))
+# label rectangle
 axes[3].text((2595+1350)/2, y_lim_bottom-bar_height/2, 'Matuyama',
              horizontalalignment='center',
              verticalalignment='center',
              color='k')
+# draw rectangle
 axes[3].add_patch(patches.Rectangle((2595, y_lim_bottom-bar_height),
                                     2700-2595,
                                     bar_height,
                                     facecolor='k',
                                     edgecolor='k'))
+# label rectangle
 axes[3].text((2700+2595)/2, y_lim_bottom-bar_height/2, 'Gauss',
               horizontalalignment='center',
               verticalalignment='center',
