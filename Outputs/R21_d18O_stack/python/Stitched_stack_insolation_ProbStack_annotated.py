@@ -46,7 +46,7 @@ stack_5 = pd.read_table(stack_5_path, delimiter=' ')
 stack = pd.concat([stack_1, stack_2, stack_3, stack_4, stack_5])
 stack = stack.groupby('age(kyr)').mean()
 
-# LR04 = LR04_fetching_func.fetch_d18O()
+LR04 = LR04_fetching_func.fetch_d18O()
 
 insolation = Milankovitch_fetching_func.fetch_65N_summer_insolation()
 
@@ -69,8 +69,8 @@ axes[1].fill_between(stack.index,
                   alpha=0.3,
                   label='BIGMACS 2sigma',
                   color='C0')
-# # LR04
-# axes[1].plot(LR04.index/1000, LR04, label='LRO4', color='k', zorder=1, alpha=0.5)
+# LR04
+axes[1].plot(LR04.index/1000, LR04, label='LRO4', color='k', zorder=1, alpha=0.5)
 # ProbStack
 axes[1].plot(ProbStack.index/1000, ProbStack, label='ProbStack', color='C3', zorder=1, alpha=0.5)
 axes[1].fill_between(ProbStack_upper.index/1000,
@@ -81,10 +81,10 @@ axes[1].fill_between(ProbStack_upper.index/1000,
                   color='C3')
 # # LR04
 axes[1].set_xlim((0, 1350))
+axes[1].set_ylim((2.7, 5.3))
 axes[1].invert_yaxis()
 
 axes[1].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
-axes[1].set_ylim(bottom=5.7)
 
 # BIGMACS
 l1 = axes[3].plot(stack.index, stack['mean(permil)'], label='BIGMACS', alpha=0.8, color='C0')
@@ -94,8 +94,8 @@ axes[3].fill_between(stack.index,
                   alpha=0.3,
                   label='BIGMACS 2sigma',
                   color='C0')
-# # LR04
-# l2 = axes[3].plot(LR04.index/1000, LR04, label='LR04', color='k', zorder=1, alpha=0.5)
+# LR04
+l2 = axes[3].plot(LR04.index/1000, LR04, label='LR04', color='k', zorder=1, alpha=0.5)
 # ProbStack
 l3 = axes[3].plot(ProbStack.index/1000, ProbStack, label='ProbStack', color='C3', zorder=1, alpha=0.5)
 axes[3].fill_between(ProbStack_upper.index/1000,
@@ -105,53 +105,63 @@ axes[3].fill_between(ProbStack_upper.index/1000,
                   label='ProbStack 2sigma',
                   color='C3')
 axes[3].set_xlim((1350, 2700))
+axes[3].set_ylim((2.7, 5))
 axes[3].invert_yaxis()
 
-axes[3].legend(handles=[l1[0], l3[0]], ncol=2, loc=[0.3,0.81])
+# axes[3].legend(handles=[l1[0], l3[0]], ncol=2, loc=[0.3,0.81])
 
 axes[3].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[3].set_xlabel('Age (ka BP)')
-axes[3].set_ylim(bottom=5)
 
 fig.set_size_inches(10,8)
 
-#%% plot geomagnetic chrons
+#%% draw geomagnetic chrons
+# rectangle height
 bar_height = 0.25
+# rectangle bottom which is the y lower limit
 y_lim_bottom = axes[1].get_ylim()[0]
+# draw rectangle
 axes[1].add_patch(patches.Rectangle((0, y_lim_bottom-bar_height),
                                     773,
                                     bar_height,
                                     facecolor='k',
                                     edgecolor='k'))
+# label rectangle
 axes[1].text(773/2, y_lim_bottom-bar_height/2, 'Brunhes',
              horizontalalignment='center',
              verticalalignment='center',
              color='w')
+# draw rectangle
 axes[1].add_patch(patches.Rectangle((773, y_lim_bottom-bar_height),
                                     1350-773,
                                     bar_height,
                                     facecolor='None',
                                     edgecolor='k'))
+# label rectangle
 axes[1].text((1350+773)/2, y_lim_bottom-bar_height/2, 'Matuyama',
              horizontalalignment='center',
              verticalalignment='center',
              color='k')
 y_lim_bottom = axes[3].get_ylim()[0]
 bar_height = 0.23 # a shorter bar height cuz plot is broader
+# draw rectangle
 axes[3].add_patch(patches.Rectangle((1350, y_lim_bottom-bar_height),
                                     2595-1350,
                                     bar_height,
                                     facecolor='None',
                                     edgecolor='k'))
+# label rectangle
 axes[3].text((2595+1350)/2, y_lim_bottom-bar_height/2, 'Matuyama',
              horizontalalignment='center',
              verticalalignment='center',
              color='k')
+# draw rectangle
 axes[3].add_patch(patches.Rectangle((2595, y_lim_bottom-bar_height),
                                     2700-2595,
                                     bar_height,
                                     facecolor='k',
                                     edgecolor='k'))
+# label rectangle
 axes[3].text((2700+2595)/2, y_lim_bottom-bar_height/2, 'Gauss',
               horizontalalignment='center',
               verticalalignment='center',

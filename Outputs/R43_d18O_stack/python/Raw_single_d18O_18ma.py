@@ -27,7 +27,10 @@ from scipy import interpolate
 #     result = np.correlate(x, x, mode='full')
 #     return result[int(result.size/2):]
 
-sns.set(font='Arial',palette='husl',style='ticks',context='paper')
+sns.set(font='Arial',palette='husl',style='ticks',context='talk')
+
+xlim_left = 1750
+xlim_right = 1950
 
 # read pacific data
 stack_path = '../results.mat'
@@ -109,14 +112,19 @@ for i in range(len(df_Pacific['name'])):
     d18O = d18O[~d18O.mask]
     fig = plt.figure()
     if d18O[(age>1800) & (age<1900)].size != 0: 
-        plt.plot(age, d18O, color='C4')
-        plt.title(df_Pacific.iloc[i]['name'][0])
-        plt.xlim(1500, 2000)
-        plt.ylim(2.5, 4.5)
+        plt.plot(age, d18O, '-o', color='C4')
+        plt.plot(LR04.index/1000, LR04, color='k', alpha=0.5)
+        # plt.title(df_Pacific.iloc[i]['name'][0])
+        plt.xlim(xlim_left, xlim_right)
+        plt.ylim(d18O[(age>1750) & (age<1950)].min()-0.5,
+                 d18O[(age>1750) & (age<1950)].max()+0.5)
         plt.gca().invert_yaxis()
         plt.xlabel('Age (ka BP)')
         plt.ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
-        plt.savefig(df_Pacific.iloc[i]['name'][0], dpi=500)
+        plt.gca().axvspan(1800, 1900, alpha=0.5, color='gray')
+        # plt.savefig('single record figures/'+df_Pacific.iloc[i]['name'][0], dpi=500)
+        plt.tight_layout()
+        plt.savefig('single record figures/'+df_Pacific.iloc[i]['name'][0]+'.pdf')
 for i in range(len(df_Atlantic['name'])):
     d18O = ma.fix_invalid(df_Atlantic.iloc[i]['d18O']).mean(axis=1)
     shift = ma.squeeze(df_Atlantic.iloc[i]['d18O_shift'])
@@ -127,14 +135,19 @@ for i in range(len(df_Atlantic['name'])):
     d18O = d18O[~d18O.mask]
     fig = plt.figure()
     if d18O[(age>1800) & (age<1900)].size != 0: 
-        plt.plot(age, d18O, color='C5')
-        plt.title(df_Atlantic.iloc[i]['name'][0])
-        plt.xlim(1500, 2000)
-        plt.ylim(2.5, 4.5)
+        plt.plot(age, d18O, '-o', color='C5')
+        plt.plot(LR04.index/1000, LR04, color='k', alpha=0.5)
+        # plt.title(df_Atlantic.iloc[i]['name'][0])
+        plt.xlim(xlim_left, xlim_right)
+        plt.ylim(d18O[(age>1750) & (age<1950)].min()-0.5,
+                 d18O[(age>1750) & (age<1950)].max()+0.5)
         plt.gca().invert_yaxis()
         plt.xlabel('Age (ka BP)')
         plt.ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
-        plt.savefig(df_Atlantic.iloc[i]['name'][0], dpi=500)
+        plt.gca().axvspan(1800, 1900, alpha=0.5, color='gray')
+        # plt.savefig('single record figures/'+df_Atlantic.iloc[i]['name'][0], dpi=500)
+        plt.tight_layout()
+        plt.savefig('single record figures/'+df_Atlantic.iloc[i]['name'][0]+'.pdf')
 for i in range(len(df_Indian['name'])):
     d18O = ma.fix_invalid(df_Indian.iloc[i]['d18O']).mean(axis=1)
     shift = ma.squeeze(df_Indian.iloc[i]['d18O_shift'])
@@ -145,14 +158,19 @@ for i in range(len(df_Indian['name'])):
     d18O = d18O[~d18O.mask]
     fig = plt.figure()
     if d18O[(age>1800) & (age<1900)].size != 0: 
-        plt.plot(age, d18O, color='C6')
-        plt.title(df_Indian.iloc[i]['name'][0])
-        plt.xlim(1500, 2000)
-        plt.ylim(2.5, 4.5)
+        plt.plot(age, d18O, '-o', color='C6')
+        plt.plot(LR04.index/1000, LR04, color='k', alpha=0.5)
+        # plt.title(df_Indian.iloc[i]['name'][0])
+        plt.xlim(xlim_left, xlim_right)
+        plt.ylim(d18O[(age>1750) & (age<1950)].min()-0.5,
+                 d18O[(age>1750) & (age<1950)].max()+0.5)
         plt.gca().invert_yaxis()
         plt.xlabel('Age (ka BP)')
         plt.ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
-        plt.savefig(df_Indian.iloc[i]['name'][0], dpi=500)
+        plt.gca().axvspan(1800, 1900, alpha=0.5, color='gray')
+        # plt.savefig('single record figures/'+df_Indian.iloc[i]['name'][0], dpi=500)
+        plt.tight_layout()
+        plt.savefig('single record figures/'+df_Indian.iloc[i]['name'][0]+'.pdf')
 # axes[0].plot(Pacific_stack.index, Pacific_stack['mean(permil)'], color='C4')
 # axes[1].plot(Atlantic_stack.index, Atlantic_stack['mean(permil)'], color='C5')
 # axes[0].plot(LR04.index/1000, LR04, color='k', alpha=0.5)
