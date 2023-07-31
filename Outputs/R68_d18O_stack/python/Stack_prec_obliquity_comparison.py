@@ -38,7 +38,7 @@ Pacific_stack_path = '../stack.txt'
 # stack = scipy.io.loadmat(stack_path)
 Pacific_stack = pd.read_table(Pacific_stack_path, delimiter=' ')
 
-Atlantic_stack_path = '../../R65_d18O_stack/stack.txt'
+Atlantic_stack_path = '../../R69_d18O_stack/stack.txt'
 # stack = scipy.io.loadmat(stack_path)
 Atlantic_stack = pd.read_table(Atlantic_stack_path, delimiter=' ')
 
@@ -161,3 +161,4 @@ for ax in axes:
 fig.set_size_inches(6,8)
 
 # plt.savefig('Stack_prec_obliquity_comparison.pdf')
+plt.savefig('Stack_prec_obliquity_comparison.png', dpi=700)

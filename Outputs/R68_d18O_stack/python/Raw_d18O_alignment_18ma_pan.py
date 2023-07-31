@@ -5,6 +5,7 @@ Created on Fri May  5 15:02:26 2023
 
 @author: zhou
 """
+
 import pandas as pd
 import sys
 sys.path.append("../../../../../Work/Lorraine/LR04/python")
@@ -68,7 +69,7 @@ Pacific_stack = pd.read_table(Pacific_path, delimiter=' ')
 Pacific_stack = Pacific_stack.groupby('age(kyr)').mean()
 
 # Atlantic data
-stack_path = '../../R65_d18O_stack/results.mat'
+stack_path = '../../R69_d18O_stack/results.mat'
 mat = scipy.io.loadmat(stack_path)
 
 mdata = mat['summary']  # variable in mat file
@@ -86,7 +87,7 @@ columns = [n for n, v in ndata.items()]
 df_Atlantic = pd.DataFrame(np.concatenate([ndata[c] for c in columns], axis=1),
                   columns=columns)
 
-Atlantic_path = '../../R65_d18O_stack/stack.txt'
+Atlantic_path = '../../R69_d18O_stack/stack.txt'
 Atlantic_stack = pd.read_table(Atlantic_path, delimiter=' ')
 Atlantic_stack = Atlantic_stack.groupby('age(kyr)').mean()
 
@@ -97,7 +98,7 @@ fig, axes = plt.subplots(14,1, sharex=True)
 
 # list of cores to plot from the Pacific
 pacific_core_names = ['ODP1241_1', '677_LR04age_1', '846_LR04age',
-                 '1143_LR04age', '849_LR04age_1',
+                 'ODP1143', '849_LR04age_1',
                  '1123_LR04age']
 
 pacific_core_display_names = ['ODP 1241', r'$\underline{ODP\ 677}$', r'$ODP\ 846$',
@@ -182,5 +183,5 @@ axes[-1].set_xlabel('Age (ka BP)')
 
 fig.set_size_inches(6,10)
 
-# plt.savefig('Raw_d18O_alignment_18ma_pan.png', dpi=700)
+plt.savefig('Raw_d18O_alignment_18ma_pan.png', dpi=700)
 # plt.savefig('Raw_d18O_alignment_18ma_pan.pdf')
