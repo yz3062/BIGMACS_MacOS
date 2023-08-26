@@ -213,4 +213,4 @@ for ax in axes:
 fig.set_size_inches(6,8)
 
 # plt.savefig('Stack_prec_obliquity_comparison.pdf')
-plt.savefig('Stack_inso_comparison.png', dpi=700)
+# plt.savefig('Stack_inso_comparison.png', dpi=700)

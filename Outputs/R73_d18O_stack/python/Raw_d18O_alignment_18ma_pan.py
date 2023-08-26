@@ -184,4 +184,4 @@ axes[-1].set_xlabel('Age (ka BP)')
 fig.set_size_inches(6,10)
 
 # plt.savefig('Raw_d18O_alignment_18ma_pan.png', dpi=700)
-plt.savefig('Raw_d18O_alignment_18ma_pan.pdf')
+# plt.savefig('Raw_d18O_alignment_18ma_pan.pdf')
