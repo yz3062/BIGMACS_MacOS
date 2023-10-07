@@ -1,0 +1,3 @@
+depth	age	unct	mode
+552	105	5	1
+693	140	5	1
