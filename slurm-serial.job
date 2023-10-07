@@ -1,8 +1,8 @@
 #!/bin/bash  -l
 #SBATCH --job-name="matlab_BIGMACS"
 #SBATCH --partition=largemem
-#SBATCH --output=R72.log
-#SBATCH --time=3:00:00
+#SBATCH --output=R76.log
+#SBATCH --time=5:00:00
 #SBATCH --mail-user=yuxin_zhou@ucsb.edu
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=1 --ntasks-per-node 40

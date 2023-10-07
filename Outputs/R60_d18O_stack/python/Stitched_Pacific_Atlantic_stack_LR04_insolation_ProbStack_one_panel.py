@@ -71,7 +71,7 @@ axes[1].invert_yaxis()
 axes[1].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[1].set_ylim(bottom=5.7)
 
-axes[1].legend(handles=[l2[0], l1[0], l4[0]], ncol=3, loc=[0.3,0.11])
+axes[1].legend(handles=[l2[0], l1[0], l4[0]], ncol=3, loc=[0.3,0.11], fancybox=True)
 
 fig.set_size_inches(15,8)
 
