@@ -46,7 +46,7 @@ sns.set(font='Myriad Pro',palette='husl',style='ticks',context='paper')
 plt.rc('text', usetex=True)
 
 # read pacific data
-stack_path = '../../R80_d18O_stack/results.mat'
+stack_path = '../../R83_d18O_stack/results.mat'
 mat = scipy.io.loadmat(stack_path)
 
 mdata = mat['summary']  # variable in mat file
@@ -64,7 +64,7 @@ columns = [n for n, v in ndata.items()]
 df_Pacific = pd.DataFrame(np.concatenate([ndata[c] for c in columns], axis=1),
                   columns=columns)
 
-Pacific_path = '../../R80_d18O_stack/stack.txt'
+Pacific_path = '../../R83_d18O_stack/stack.txt'
 Pacific_stack = pd.read_table(Pacific_path, delimiter=' ')
 Pacific_stack = Pacific_stack.groupby('age(kyr)').mean()
 
@@ -156,11 +156,11 @@ axes[1].plot(Pacific_sed_rate_normalized_interpolated_Series_mean.index,
               'o-', alpha=1, color='C4',markersize=2)
 
 axes[0].set_xlim(1500, 2100)
-axes[0].set_title('Pacific ages: 1.793, 1.841, 1.863, 1.917, and 1.956 Ma')
+axes[0].set_title('Pacific ages: 1.793, 1.917, and 1.956 Ma')
 axes[1].set_xlabel('Age (ka)')
 axes[0].set_ylabel('Normalized sed. rate')
 axes[1].set_ylabel('Normalized sed. rate')
-plt.savefig('Atlantic_Pacific_normalized_sed_rate_R80.png', dpi=500)
+plt.savefig('Atlantic_Pacific_normalized_sed_rate.png', dpi=500)
 
 # #%% beautification
 # plt.subplots_adjust(hspace=-0.35, right=0.8)
