@@ -1,0 +1,3 @@
+depth(m)	initial_age(kiloyear)
+96.16	705.39
+96.41	710.0

@@ -1,0 +1,3 @@
+particle_bandwidth: 2
+smoothness_bandwidth: 7
+min_resolution: inf
