@@ -1,8 +1,8 @@
-%poolobj = parpool('local', 36);
-%fprintf('Number of workers: %g\n', poolobj.NumWorkers);
+poolobj = parpool('local', 36);
+fprintf('Number of workers: %g\n', poolobj.NumWorkers);
 
-inputFile = 'DeV_S11';
+inputFile = 'R89';
 
-inputMode = 'age_model_construction';
+inputMode = 'stack_construction';
 
 BIGMACS(inputFile,inputMode,'show');
