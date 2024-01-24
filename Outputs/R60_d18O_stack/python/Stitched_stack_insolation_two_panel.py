@@ -196,5 +196,5 @@ pos.y0 -= 0.03
 pos.y1 -= 0.03
 axes[2].set_position(pos)
 # plt.savefig('Stitched_stack_insolation_two_panel.png', dpi=700)
-plt.savefig('Stitched_stack_insolation_two_panel.pdf')
+# plt.savefig('Stitched_stack_insolation_two_panel.pdf')
 
