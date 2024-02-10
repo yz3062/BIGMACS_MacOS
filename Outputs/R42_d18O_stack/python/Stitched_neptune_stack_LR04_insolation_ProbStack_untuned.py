@@ -47,7 +47,7 @@ stack = pd.concat([stack_1, stack_2, stack_3, stack_4, stack_5])
 stack = stack.groupby('age(kyr)').mean()
 
 # read untuned ages
-untuned_df = pd.read_excel('Untuned_results_mean_exclusion.xlsx')
+untuned_df = pd.read_excel('Untuned_results_mean_exclusion_expanded_1172_removed_Hobart2023.xlsx')
 # ignore reversals
 untuned_df = untuned_df[untuned_df['Reversal']!='y']
 
@@ -126,6 +126,7 @@ axes[3].set_ylim(bottom=5)
 fig.set_size_inches(10,8)
 
 #%% plot geomagnetic chrons
+# upper panel
 bar_height = 0.25
 y_lim_bottom = axes[1].get_ylim()[0]
 axes[1].add_patch(patches.Rectangle((0, y_lim_bottom-bar_height),
@@ -142,10 +143,28 @@ axes[1].add_patch(patches.Rectangle((773, y_lim_bottom-bar_height),
                                     bar_height,
                                     facecolor='None',
                                     edgecolor='k'))
-axes[1].text((1350+773)/2, y_lim_bottom-bar_height/2, 'Matuyama',
+axes[1].text(880, y_lim_bottom-bar_height/2, 'Matuyama',
              horizontalalignment='center',
              verticalalignment='center',
              color='k')
+axes[1].text(1282.5, y_lim_bottom-bar_height/2, 'Matuyama',
+             horizontalalignment='center',
+             verticalalignment='center',
+             color='k')
+# Jaramillo
+axes[1].add_patch(patches.Rectangle((990, y_lim_bottom-bar_height),
+                                    80,
+                                    bar_height,
+                                    facecolor='k',
+                                    edgecolor='k'))
+# Cobb Mountain
+axes[1].add_patch(patches.Rectangle((1180, y_lim_bottom-bar_height),
+                                    35,
+                                    bar_height,
+                                    facecolor='k',
+                                    edgecolor='k'))
+
+# lower panel
 y_lim_bottom = axes[3].get_ylim()[0]
 bar_height = 0.23 # a shorter bar height cuz plot is broader
 axes[3].add_patch(patches.Rectangle((1350, y_lim_bottom-bar_height),
@@ -153,10 +172,27 @@ axes[3].add_patch(patches.Rectangle((1350, y_lim_bottom-bar_height),
                                     bar_height,
                                     facecolor='None',
                                     edgecolor='k'))
-axes[3].text((2595+1350)/2, y_lim_bottom-bar_height/2, 'Matuyama',
+axes[3].text(1562.5, y_lim_bottom-bar_height/2, 'Matuyama',
              horizontalalignment='center',
              verticalalignment='center',
              color='k')
+axes[3].text(2350, y_lim_bottom-bar_height/2, 'Matuyama',
+             horizontalalignment='center',
+             verticalalignment='center',
+             color='k')
+# Olduvai
+axes[3].add_patch(patches.Rectangle((1775, y_lim_bottom-bar_height),
+                                    159,
+                                    bar_height,
+                                    facecolor='k',
+                                    edgecolor='k'))
+# Reunion
+axes[3].add_patch(patches.Rectangle((2116, y_lim_bottom-bar_height),
+                                    24,
+                                    bar_height,
+                                    facecolor='k',
+                                    edgecolor='k'))
+
 axes[3].add_patch(patches.Rectangle((2595, y_lim_bottom-bar_height),
                                     2700-2595,
                                     bar_height,
@@ -197,6 +233,6 @@ pos = axes[2].get_position()
 pos.y0 -= 0.03
 pos.y1 -= 0.03
 axes[2].set_position(pos)
-# plt.savefig('Stitched_stack_LR04_insolation_untuned.png', dpi=700)
+# plt.savefig('Untuned_results_mean_exclusion_expanded_1172_removed_GTS2012_Hobart2023.png', dpi=700)
 # plt.savefig('Stitched_stack_LR04_insolation_untuned_no_compaction_corx.pdf')
 # plt.savefig('Stitched_neptune_stack_LR04_insolation_ProbStack.pdf')
