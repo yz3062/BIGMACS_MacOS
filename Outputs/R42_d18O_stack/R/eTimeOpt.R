@@ -6,6 +6,7 @@
 # ex=sedRamp(ex,srstart=0.01,srend=0.03)
 # # interpolate to median sampling interval
 # ex=linterp(ex)
+library(astrochron)
 library(readxl)
 
 ex <- read_excel('../python/Stack_untuned_uniform_age_exclusion_expanded_1172_removed_Hobart2023.xlsx')
