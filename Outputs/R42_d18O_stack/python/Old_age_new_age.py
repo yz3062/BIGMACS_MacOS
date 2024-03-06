@@ -13,7 +13,7 @@ import seaborn as sns
 sns.set(font='Arial',palette='husl',style='whitegrid',context='notebook')
 
 # read untuned ages
-untuned_df = pd.read_excel('Untuned_results_mean_exclusion.xlsx')
+untuned_df = pd.read_excel('Untuned_results_mean_exclusion_expanded_1172_removed_GTS2012_Hobart2023.xlsx')
 # # ignore reversals
 # untuned_df = untuned_df[untuned_df['Reversal']!='y']
 
@@ -25,5 +25,5 @@ plt.xlabel('Untuned age (ka)')
 plt.ylabel('LR04 age (ka)')
 plt.gcf().set_size_inches(5,5)
 
-# plt.savefig('Old_age_new_age.png', dpi=700)
-plt.savefig('Old_age_new_age.pdf')
+plt.savefig('Old_age_new_age.png', dpi=700)
+# plt.savefig('Old_age_new_age.pdf')
