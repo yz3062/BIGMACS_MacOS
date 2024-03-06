@@ -1,0 +1,170 @@
+MATLAB is selecting SOFTWARE OPENGL rendering.
+OMP: Warning #182: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+             R2023a Update 4 (9.14.0.2306882) 64-bit (glnxa64)
+                               June 19, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to parallel pool with 36 workers.
+Number of workers: 36
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+{Error using Proposal_init
+Operands to the logical AND (&&) and OR (||) operators must be convertible to
+logical scalar values. Use the ANY or ALL functions to reduce operands to
+logical scalar values.
+
+Error in getProposal (line 80)
+    [A{n},W{n}] = Proposal_init(W{n+1},A{n+1},depth_diff(n),d18O(n,:),C14{n},Age_Info(n,:),data,param,S,target,data_type,n);
+
+Error in initializeAlignment (line 7)
+parfor ll = 1:L
+
+Error in Stacking (line 12)
+QQ = initializeAlignment(data,data_part,param,target,setting);
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+
+Error in main (line 8)
+BIGMACS(inputFile,inputMode,'show');
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+} 
+Parallel pool using the 'Processes' profile is shutting down.
+Time elapsed = 39 s
+MATLAB is selecting SOFTWARE OPENGL rendering.
+OMP: Warning #182: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+             R2023a Update 4 (9.14.0.2306882) 64-bit (glnxa64)
+                               June 19, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to parallel pool with 36 workers.
+Number of workers: 36
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+208_1263_3
+342-U1408_2207_1258_S16208-1262_C
+199-1218_1
+208-1262_A
+208-1265_1
+208_1263_2
+342-U1408_1
+208-1262_1
+199-1218_4
+208_1263_4208_1263_5
+208-1262_B
+208_1263_S8
+208-1262_2
+208-1265_2
+207_1258_S13
+{Error using Proposal_init
+Operands to the logical AND (&&) and OR (||) operators must be convertible to
+logical scalar values. Use the ANY or ALL functions to reduce operands to
+logical scalar values.
+
+Error in getProposal (line 80)
+    [A{n},W{n}] = Proposal_init(W{n+1},A{n+1},depth_diff(n),d18O(n,:),C14{n},Age_Info(n,:),data,param,S,target,data_type,n);
+
+Error in initializeAlignment (line 7)
+parfor ll = 1:L
+
+Error in Stacking (line 12)
+QQ = initializeAlignment(data,data_part,param,target,setting);
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+
+Error in main (line 8)
+BIGMACS(inputFile,inputMode,'show');
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+} 
+Parallel pool using the 'Processes' profile is shutting down.
+Time elapsed = 39 s
+MATLAB is selecting SOFTWARE OPENGL rendering.
+OMP: Warning #182: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+             R2023a Update 4 (9.14.0.2306882) 64-bit (glnxa64)
+                               June 19, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to parallel pool with 36 workers.
+Number of workers: 36
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+208_1263_5
+207_1258_S16
+208_1263_3
+208-1262_B
+342-U1408_2
+208-1262_1
+199-1218_4
+208-1265_2
+208-1265_1
+208_1263_4
+208-1262_A199-1218_1
+342-U1408_1208_1263_S8208_1263_2
+208-1262_2
+208-1262_C
+{Error using Proposal_init
+Operands to the logical AND (&&) and OR (||) operators must be convertible to
+logical scalar values. Use the ANY or ALL functions to reduce operands to
+logical scalar values.
+
+Error in getProposal (line 80)
+    [A{n},W{n}] = Proposal_init(W{n+1},A{n+1},depth_diff(n),d18O(n,:),C14{n},Age_Info(n,:),data,param,S,target,data_type,n);
+
+Error in initializeAlignment (line 7)
+parfor ll = 1:L
+
+Error in Stacking (line 12)
+QQ = initializeAlignment(data,data_part,param,target,setting);
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+
+Error in main (line 8)
+BIGMACS(inputFile,inputMode,'show');
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+} 
+Parallel pool using the 'Processes' profile is shutting down.
+Time elapsed = 38 s
