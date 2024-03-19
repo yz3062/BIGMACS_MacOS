@@ -59,5 +59,22 @@ dat3_lin=linterp(dat3)
 # compare oxygen isotope data on depth-derived and eTimeOpt timescales
 plot(dat3_lin,type="l",col="red",lwd=1.5,xlab="Age (ka)",ylab="d18O", main="red=eTimeOpt timescale        black=depth-derived timescale"); lines(dat)
 
-# this is a plot of the difference between the uninterpolated eTimeOpt and depth-derived timescales at each datum
-plot(dat3[,1],dat3[,1]-dat[,1],xlab="eTimeOpt timescale (ka)",ylab="eTimeOpt - depth derived timescale (ka)",main="Temporal adjustments")
+# take out dat first and last 200 observations to be comparable in length to dat3
+# then find the age diff between dat and dat3
+dat = dat[-(1:200),]
+dat = dat[-(2372:2578),]
+# diff = dat3[,1] - dat[,1]
+output = cbind(dat3[,1], dat[,1])
+output_df = as.data.frame(output)
+
+# save diff to excel
+library(writexl)
+write_xlsx(output_df, './untuned_intermediate_tuned_ages.xlsx')
+
+# # save data frames to excel
+# library(writexl)
+# write_xlsx(dat3_lin, './tuned_stack_unextrapolated.xlsx')
+
+# # DOESN'T WORK
+# # this is a plot of the difference between the uninterpolated eTimeOpt and depth-derived timescales at each datum
+# plot(dat3[,1],dat3[,1]-dat[,1],xlab="eTimeOpt timescale (ka)",ylab="eTimeOpt - depth derived timescale (ka)",main="Temporal adjustments")
