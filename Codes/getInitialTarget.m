@@ -40,15 +40,8 @@ else
     target.stack(:,3) = str2double(STDV);
 end
 
-disp(target.stack(:,1));
-disp(setting.stack_min);
-disp(setting.stack_max);
-
 INDEX = (target.stack(:,1)>=setting.stack_min)&(target.stack(:,1)<=setting.stack_max);
 target.stack = target.stack(INDEX,:);
-disp('Entering truncation');
-disp(INDEX);
-disp(target.stack);
 
 if strcmp(MODE,'stacking')
     st = max([setting.st,target.stack(1,1)]);
@@ -65,17 +58,9 @@ if strcmp(MODE,'stacking')
     new_stack(:,3) = interp1(target.stack(:,1),target.stack(:,3),age);
     
     target.stack = new_stack;
-    disp('Entered stacking operation');
-    disp(st);
-    disp(ed);
-    disp(age);
-    disp(index);
-    disp(N);
 end
 
 target.init_stack = target.stack;
-
-disp(target.stack);
 
 % % load calibration curve:
 % cal_curve = cell(4,1);
