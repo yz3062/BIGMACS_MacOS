@@ -58,11 +58,13 @@ if strcmp(MODE,'stacking')
     new_stack(:,3) = interp1(target.stack(:,1),target.stack(:,3),age);
     
     target.stack = new_stack;
+    disp('stacking operations entered');
+    disp(new_stack);
 end
 
 target.init_stack = target.stack;
 
-disp(target.stack)
+disp(target.stack);
 
 % % load calibration curve:
 % cal_curve = cell(4,1);
