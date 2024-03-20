@@ -182,3 +182,39 @@ evalin('caller', strcat(script, ';'));
 } 
 Parallel pool using the 'Processes' profile is shutting down.
 Time elapsed = 35 s
+MATLAB is selecting SOFTWARE OPENGL rendering.
+OMP: Warning #182: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+             R2023a Update 4 (9.14.0.2306882) 64-bit (glnxa64)
+                               June 19, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+{Index in position 1 is invalid. Array indices must be positive integers or
+logical values.
+
+Error in getInitialTarget (line 108)
+age = (0:0.05:target.stack(end,1))';
+
+Error in Stacking (line 5)
+target = getInitialTarget(inputFile,setting,'stacking');
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+
+Error in main (line 8)
+BIGMACS(inputFile,inputMode,'show');
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+} 
+Time elapsed = 35 s
