@@ -40,8 +40,13 @@ else
     target.stack(:,3) = str2double(STDV);
 end
 
+disp(target.stack(:,1));
+disp(setting.stack_min);
+disp(setting.stack_max);
+
 INDEX = (target.stack(:,1)>=setting.stack_min)&(target.stack(:,1)<=setting.stack_max);
 target.stack = target.stack(INDEX,:);
+disp('Entering truncation');
 disp(INDEX);
 disp(target.stack);
 
