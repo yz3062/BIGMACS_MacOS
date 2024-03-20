@@ -62,6 +62,7 @@ end
 
 target.init_stack = target.stack;
 
+disp(target.stack)
 
 % % load calibration curve:
 % cal_curve = cell(4,1);
