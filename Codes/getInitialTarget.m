@@ -42,6 +42,8 @@ end
 
 INDEX = (target.stack(:,1)>=setting.stack_min)&(target.stack(:,1)<=setting.stack_max);
 target.stack = target.stack(INDEX,:);
+disp(INDEX);
+disp(target.stack);
 
 if strcmp(MODE,'stacking')
     st = max([setting.st,target.stack(1,1)]);
@@ -58,8 +60,12 @@ if strcmp(MODE,'stacking')
     new_stack(:,3) = interp1(target.stack(:,1),target.stack(:,3),age);
     
     target.stack = new_stack;
-    disp('stacking operations entered');
-    disp(new_stack);
+    disp('Entered stacking operation');
+    disp(st);
+    disp(ed);
+    disp(age);
+    disp(index);
+    disp(N);
 end
 
 target.init_stack = target.stack;
