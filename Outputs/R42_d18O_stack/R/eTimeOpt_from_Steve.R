@@ -1,5 +1,8 @@
+# Part 1
 # load the astrochron package, please use version 1.2
 library(astrochron)
+
+win_size = 400
 
 dat=read("Stack_untuned_uniform_age_exclusion_expanded_1172_removed_Hobart2023.csv")
 
@@ -16,7 +19,7 @@ targetP=c(41.08463)
 # targetE contains the amplitude modulation terms for obliquity.
 targetE=c(174.8252,106.6098,97.08738)
 #  we will use a 400 ka window.
-res=eTimeOpt(dat,targetP=targetP,targetE=targetE,sedmin=80,sedmax=120,win=400,fitModPwr=F,flow=1/70,fhigh=1/25, roll=10^9, output=1,ydir=-1)			
+res=eTimeOpt(dat,targetP=targetP,targetE=targetE,sedmin=80,sedmax=120,win=win_size,fitModPwr=F,flow=1/70,fhigh=1/25, roll=10^9, output=1,ydir=-1)			
 
 # extract the optimal sedimentation rates from the eTimeOpt results
 #  we will focus on the spectral power fit (middle panel in above figure),
@@ -53,7 +56,8 @@ plot(dat2[,1],dat2[,1]-dat[,1]-10.0614,xlab="eTimeOpt timescale (ka)",ylab="eTim
 
 dat3=tune(dat,control=control,extrapolate=F)
 # anchor the floating time scale so that the youngest (non extrapolated) value is 200 ka
-dat3[1]=dat3[1]+dat[201,1]
+#### change the number below depending on window size #####
+dat3[1]=dat3[1]+dat[win_size/2+1,1]
 # interpolate to even sampling grid (use median sampling interval)
 dat3_lin=linterp(dat3)
 # compare oxygen isotope data on depth-derived and eTimeOpt timescales
@@ -67,13 +71,14 @@ dat = dat[-(2372:2578),]
 output = cbind(dat3[,1], dat[,1])
 output_df = as.data.frame(output)
 
-# save diff to excel
-library(writexl)
-write_xlsx(output_df, './untuned_intermediate_tuned_ages.xlsx')
-
-# # save data frames to excel
+# # save diff to excel
 # library(writexl)
-# write_xlsx(dat3_lin, './tuned_stack_unextrapolated.xlsx')
+# write_xlsx(output_df, './untuned_intermediate_tuned_ages.xlsx')
+
+# save data frames to excel
+#### change the filename below depending on window size #####
+# library(writexl)
+# write_xlsx(dat3_lin, './tuned_stack_unextrapolated_win150.xlsx')
 
 # # DOESN'T WORK
 # # this is a plot of the difference between the uninterpolated eTimeOpt and depth-derived timescales at each datum

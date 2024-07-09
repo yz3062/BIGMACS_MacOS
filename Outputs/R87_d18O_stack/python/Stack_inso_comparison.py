@@ -15,7 +15,7 @@ import seaborn as sns
 # import pyleoclim as pyleo
 import matplotlib
 
-sns.set(font='Arial',palette='husl',style='ticks',context='notebook')
+sns.set(font='Arial',palette='husl',style='ticks',context='paper')
 
 def shade(fig,axes,left_x,right_x, color='lightgray'):
     # the following code will shade HEs
@@ -213,6 +213,6 @@ for ax in axes:
 
 fig.set_size_inches(6,8)
 
-# plt.savefig('Stack_prec_obliquity_comparison.pdf')
+# plt.savefig('Stack_inso_comparison_shade.pdf')
 # plt.savefig('Stack_inso_comparison_shade.png', dpi=700)
-plt.savefig('Stack_inso_comparison_shade_poster.pdf')
+# plt.savefig('Stack_inso_comparison_shade_poster.pdf')

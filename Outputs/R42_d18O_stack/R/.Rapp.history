@@ -1,0 +1,2 @@
+load("/Users/zhou/Documents/GitHub/BIGMACS_MacOS/Outputs/R42_d18O_stack/R/tTimeOpt_from_Steve_part2_1000runs_depth.RData")
+load("/Users/zhou/Documents/GitHub/BIGMACS_MacOS/Outputs/R42_d18O_stack/R/tTimeOpt_from_Steve_part2_1000runs_time.RData")

@@ -247,7 +247,7 @@ pos = axes[2].get_position()
 pos.y0 -= 0.03
 pos.y1 -= 0.03
 axes[2].set_position(pos)
-plt.savefig('Untuned_intermediate_full_tuned_comparison.png', dpi=700)
+# plt.savefig('Untuned_intermediate_full_tuned_comparison.png', dpi=700)
 # plt.savefig('Untuned_results_mean_exclusion_expanded_1172_removed_GTS2012_Hobart2023.png', dpi=700)
 # plt.savefig('Stitched_stack_LR04_insolation_untuned_no_compaction_corx.pdf')
 # plt.savefig('Stitched_neptune_stack_LR04_insolation_ProbStack.pdf')
