@@ -35,7 +35,7 @@ def shade(fig,axes,left_x,right_x, color='lightgray'):
     upper_left = figtr.transform(top_axtr.transform((left_x, shade_upper_limit)))
     upper_right = figtr.transform(top_axtr.transform((right_x, shade_upper_limit)))
     # 4. Create the patch
-    rect = matplotlib.patches.Polygon([lower_left,lower_right,upper_right,upper_left], transform=fig.transFigure,color=color)
+    rect = matplotlib.patches.Polygon([lower_left,lower_right,upper_right,upper_left], transform=fig.transFigure,color=color, alpha=0.3)
     fig.patches.append(rect)
 
 Pacific_stack_path = '../../R86_d18O_stack/stack.txt'
@@ -58,13 +58,14 @@ CENOGRID = CENOGRID_fetching_func.fetch_d18O()
 fig, axes = plt.subplots(4,1, sharex=True)
 # plt.subplots_adjust(hspace=-0.2)
 
-axes[0].plot(CENOGRID.index*1000, CENOGRID, color='k')
+axes[0].plot(CENOGRID.index*1000, CENOGRID, color='k', label='CENOGRID')
 
 #%% plot LR04
-axes[1].plot(LR04.index/1000, LR04, color='k')
+axes[1].plot(LR04.index/1000, LR04, color='k', label='LR04')
 
 #%% plot ProbStack
-axes[2].plot(ProbStack.index/1000, ProbStack, color='C3', alpha=0.3)
+axes[2].plot(ProbStack.index/1000, ProbStack, color='C3', alpha=0.3,
+             label='ProbStack')
 axes[2].fill_between(ProbStack.index/1000,
                      ProbStack_upper,
                      ProbStack_lower,
@@ -92,19 +93,22 @@ axes[3].fill_between(Atlantic_stack['age(kyr)'],
 axes[0].set_ylim(3, 5)
 axes[0].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[0].invert_yaxis()
+# axes[0].legend(bbox_to_anchor=(0.5, 1.1), loc='center')
 
 axes[1].set_ylim(3, 4.7)
 axes[1].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[1].invert_yaxis()
 axes[1].yaxis.set_label_position("right")
+# axes[1].legend(bbox_to_anchor=(0.5, 1.1), loc='center')
 
 axes[2].set_ylim(3, 4.7)
 axes[2].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[2].invert_yaxis()
+# axes[2].legend(bbox_to_anchor=(0.5, 1.1), loc='center')
 
 axes[3].set_xlim((1500, 2100))
 axes[3].set_ylim(3.15, 4.4)
-axes[3].legend(loc='lower right')
+# axes[3].legend(bbox_to_anchor=(0.5, 1.1), ncols=2, loc='center')
 axes[3].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[3].set_xlabel('Age (ka BP)')
 axes[3].invert_yaxis()
@@ -128,7 +132,7 @@ for i in range(3):
 # pos.y1 += 0.1
 # axes[4].set_position(pos)
 
-# shade(fig,axes,1800,1900, 'lightgray')
+shade(fig,axes,1800,1900, 'lightgray')
 # shade(fig,axes,1828,1838, 'lightblue')
 # shade(fig,axes,1858,1870, 'lightblue')
 # axes[2].axvspan(1828,1838, color='lightblue')
@@ -159,6 +163,5 @@ for ax in axes:
 
 fig.set_size_inches(6,5)
 
-# plt.savefig('Stack_prec_obliquity_comparison.pdf')
-plt.savefig('Stack_LR04_ProbStack_CENOGRID.png', dpi=700)
-# plt.savefig('Stack_inso_comparison_no_line.pdf')
+# plt.savefig('Stack_LR04_ProbStack_CENOGRID.pdf')
+# plt.savefig('Stack_LR04_ProbStack_CENOGRID.png', dpi=700)

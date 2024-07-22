@@ -41,7 +41,7 @@ def shade(fig,axes,left_x,right_x):
     rect = matplotlib.patches.Polygon([lower_left,lower_right,upper_right,upper_left], transform=fig.transFigure,color='lightgray')
     fig.patches.append(rect)
 
-sns.set(font='Myriad Pro',palette='husl',style='ticks',context='paper')
+sns.set(font='Arial',palette='husl',style='ticks',context='paper')
 
 plt.rc('text', usetex=True)
 
@@ -101,8 +101,8 @@ pacific_core_names = ['ODP1241_1', '677_LR04age_1', '846_LR04age',
                  'ODP1143', '849_LR04age_1',
                  '1123_LR04age']
 
-pacific_core_display_names = ['ODP 1241', r'$\underline{ODP\ 677}$', r'$ODP\ 846$',
-                              r'$ODP\ 1143$', r'$\underline{ODP\ 849}$', r'$ODP\ 1123$']
+pacific_core_display_names = ['ODP 1241\n2027 m', r'$\underline{ODP\ 677}$''\n'r'3472 m', r'$ODP\ 846$''\n'r'3296 m',
+                              r'$ODP\ 1143$''\n'r'2772 m', r'$\underline{ODP\ 849}$''\n'r'3839 m', r'$ODP\ 1123$''\n'r'3290 m']
 
 # axes index iterates through the axis to plot each core
 axes_index = 0
@@ -129,9 +129,9 @@ atlantic_core_names = ['U1308', 'ODP926_1',
                        'ODP928', '929_LR04age', '607_LR04age',
                        '659_LR04age', 'ODP1267', 'ODP625']
 
-atlantic_core_display_names = ['U1308', 'ODP 926',
-                               r'$ODP\ 928$', r'$ODP\ 929$', r'$DSDP\ 607$',
-                               r'$ODP\ 659$', 'ODP 1267', 'ODP 625']
+atlantic_core_display_names = ['U1308\n3883 m', 'ODP 926\n3598 m',
+                               r'$ODP\ 928$''\n'r'4010 m', r'$ODP\ 929$''\n'r'4356 m', r'$DSDP\ 607$''\n'r'3427 m',
+                               r'$ODP\ 659$''\n'r'3071 m', 'ODP 1267\n4355 m', 'ODP 625\n889 m']
 
 for core_name in atlantic_core_names:
     d18O = ma.fix_invalid(df_Atlantic[df_Atlantic['name']==core_name]['d18O'].iloc[0]).mean(axis=1)
@@ -183,5 +183,7 @@ axes[-1].set_xlabel('Age (ka BP)')
 
 fig.set_size_inches(6,10)
 
+plt.rcParams["font.family"] = "Arial"
+
 # plt.savefig('Raw_d18O_alignment_18ma_pan.png', dpi=700)
-# plt.savefig('Raw_d18O_alignment_18ma_pan_regional_stacks.pdf')
+plt.savefig('Raw_d18O_alignment_18ma_pan_regional_stacks.pdf')
