@@ -1,0 +1,45 @@
+node103.podcluster
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2021 The MathWorks, Inc.
+             R2021b Update 1 (9.11.0.1809720) 64-bit (glnxa64)
+                              November 2, 2021
+
+[Warning: Unrecognized command line option: nospxlash.] 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 40).
+>> Number of workers: 40
+>> >> >> >> >> >> -------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+   Done.
+#  Stacking algorithm is now running...
+#  Iteration 1:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [12.74079      12.47287      113.1051      7.443597      70.95465      36.24583      12.03306       10.6353      11.11308      22.93385      9.154404      8.996871      2.118095      5.629495      4.082686      2.115185      12.57323      30.07134      40.56589      30.49998      18.94216      6.515703      1.802386      16.87134      10.68512       154.988      17.25982      18.86703      17.13467      37.78235       2.01731    -0.1077193     0.9100494      1.127837      37.54738      34.44974      2.614413       3.16893      8.112064      13.11274      5.322772      7.007108      8.206574      22.48312      7.259781      2.861833      5.891495      17.15065      2.839362       8.04486       6.56647      8.293303     0.5167034        25.187      24.24955           NaN     -0.135047      1.526708      25.13493      26.19828      77.40396      2.841045       111.523       27.0299      50.83005      8.812639      1.538143      16.02038      18.25967      14.23725      16.02402       14.6045      15.28966      0.233487      4.077948      2.478273      7.739439      15.92535      10.98566      163.7962      2.230458       148.231       4.44376      4.324431].
+{Error using Proposal_PS (line 159)
+Unable to perform assignment because the size of the left side is 1-by-500 and
+the size of the right side is 0-by-500.
+
+Error in Particle_Smoothing (line 43)
+    [A{n},W{n}] = Proposal_PS(W{n+1},A{n+1},depth_diff(n),d18O(n,:),C14{n},Age_Info(n,:),data_full,param,target,mode,QQ(n,:),data.ACC_MODEL,data.ACC_CONTRACTION,data.ACC_STEADY,data.ACC_EXPANSION);
+
+Error in getAlignment (line 25)
+    parfor ll = 1:L
+
+Error in Stacking (line 20)
+    [data,samples,param] = getAlignment(data,data_part,QQ,param,target,setting,'stacking');
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+} 
+>> 

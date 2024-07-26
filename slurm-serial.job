@@ -1,12 +1,12 @@
 #!/bin/bash  -l
 #SBATCH --job-name="matlab_BIGMACS"
 #SBATCH --partition=largemem
-#SBATCH --output=DeV_STACK_2.log
-#SBATCH --time=24:00:00
+#SBATCH --output=R98.log
+#SBATCH --time=48:00:00
 #SBATCH --mail-user=yuxin_zhou@ucsb.edu
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=1 --ntasks-per-node 40
-#SBATCH --mem=700Gb
+#SBATCH --mem=720Gb
 #  this is asking for 1 node, with 1 core (i.e. a Serial job)
 #     the -l is needed on first line if you want to use modules
 
