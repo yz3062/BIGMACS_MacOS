@@ -107,10 +107,10 @@ else
         VV = (AB_TABLE'-SAM_A(1,:))./(RR.*depth_diff);
         
         MargLik = MargLik + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV,'linear',-56) - ACC_CONTRACTION;
-        index = (VV<=0)|(VV>=0.9220);
+        index = (VV<=0)|(VV>1./1.0850);
         MargLik(index) = -inf;
         
-        index = (VV<data_full.lower_sedrate)|(VV>data_full.upper_sedrate);
+        index = (VV>1./data_full.lower_sedrate)|(VV<1./data_full.upper_sedrate);
         MargLik(index) = -inf;
         
         AMAX = max(MargLik);
@@ -164,10 +164,10 @@ else
         VV = (AB_TABLE'-SAM_A(2,:))./(RR.*depth_diff);
         
         MargLik = MargLik + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV,'linear',-56) - ACC_STEADY;
-        index = (VV<0.9220)|(VV>=1.0850);
+        index = (VV<=1./1.0850)|(VV>=1./0.9220);
         MargLik(index) = -inf;
         
-        index = (VV<data_full.lower_sedrate)|(VV>data_full.upper_sedrate);
+        index = (VV>1./data_full.lower_sedrate)|(VV<1./data_full.upper_sedrate);
         MargLik(index) = -inf;
         
         AMAX = max(MargLik);
@@ -221,10 +221,10 @@ else
         VV = (AB_TABLE'-SAM_A(3,:))./(RR.*depth_diff);
         
         MargLik = MargLik + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV,'linear',-56) - ACC_EXPANSION;
-        index = (VV<1.0850);
+        index = (VV<=1./0.9220);
         MargLik(index) = -inf;
         
-        index = (VV<data_full.lower_sedrate)|(VV>data_full.upper_sedrate);
+        index = (VV>1./data_full.lower_sedrate)|(VV<1./data_full.upper_sedrate);
         MargLik(index) = -inf;
         
         AMAX = max(MargLik);
@@ -319,24 +319,24 @@ else
         VV_E = (AB_TABLE_E'-SAM_A(1,:))./(RR_E.*depth_diff);
         
         MargLik_C = MargLik_C + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV_C,'linear',-56) - ACC_CONTRACTION;
-        index = (VV_C<=0)|(VV_C>=0.9220);
+        index = (VV_C<=0)|(VV_C>1./1.0850);
         MargLik_C(index) = -inf;
         
         MargLik_M = MargLik_M + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV_M,'linear',-56) - ACC_CONTRACTION;
-        index = (VV_M<=0)|(VV_M>=0.9220);
+        index = (VV_M<=0)|(VV_M>1./1.0850);
         MargLik_M(index) = -inf;
         
         MargLik_E = MargLik_E + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV_E,'linear',-56) - ACC_CONTRACTION;
-        index = (VV_E<=0)|(VV_E>=0.9220);
+        index = (VV_E<=0)|(VV_E>1./1.0850);
         MargLik_E(index) = -inf;
         
-        index = (VV_C<data_full.lower_sedrate)|(VV_C>data_full.upper_sedrate);
+        index = (VV_C>1./data_full.lower_sedrate)|(VV_C<1./data_full.upper_sedrate);
         MargLik_C(index) = -inf;
         
-        index = (VV_M<data_full.lower_sedrate)|(VV_M>data_full.upper_sedrate);
+        index = (VV_M>1./data_full.lower_sedrate)|(VV_M<1./data_full.upper_sedrate);
         MargLik_M(index) = -inf;
         
-        index = (VV_E<data_full.lower_sedrate)|(VV_E>data_full.upper_sedrate);
+        index = (VV_E>1./data_full.lower_sedrate)|(VV_E<1./data_full.upper_sedrate);
         MargLik_E(index) = -inf;
         
         MargLik = [MargLik_C;MargLik_M;MargLik_E];
@@ -401,24 +401,24 @@ else
         VV_E = (AB_TABLE_E'-SAM_A(2,:))./(RR_E.*depth_diff);
         
         MargLik_C = MargLik_C + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV_C,'linear',-56) - ACC_STEADY;
-        index = (VV_C<0.9220)|(VV_C>=1.0850);
+        index = (VV_C<=1./1.0850)|(VV_C>1./0.9220);
         MargLik_C(index) = -inf;
         
         MargLik_M = MargLik_M + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV_M,'linear',-56) - ACC_STEADY;
-        index = (VV_M<0.9220)|(VV_M>=1.0850);
+        index = (VV_M<=1./1.0850)|(VV_M>1./0.9220);
         MargLik_M(index) = -inf;
         
         MargLik_E = MargLik_E + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV_E,'linear',-56) - ACC_STEADY;
-        index = (VV_E<0.9220)|(VV_E>=1.0850);
+        index = (VV_E<=1./1.0850)|(VV_E>1./0.9220);
         MargLik_E(index) = -inf;
-        
-        index = (VV_C<data_full.lower_sedrate)|(VV_C>data_full.upper_sedrate);
+
+        index = (VV_C>1./data_full.lower_sedrate)|(VV_C<1./data_full.upper_sedrate);
         MargLik_C(index) = -inf;
         
-        index = (VV_M<data_full.lower_sedrate)|(VV_M>data_full.upper_sedrate);
+        index = (VV_M>1./data_full.lower_sedrate)|(VV_M<1./data_full.upper_sedrate);
         MargLik_M(index) = -inf;
         
-        index = (VV_E<data_full.lower_sedrate)|(VV_E>data_full.upper_sedrate);
+        index = (VV_E>1./data_full.lower_sedrate)|(VV_E<1./data_full.upper_sedrate);
         MargLik_E(index) = -inf;
         
         MargLik = [MargLik_C;MargLik_M;MargLik_E];
@@ -482,24 +482,24 @@ else
         VV_E = (AB_TABLE_E'-SAM_A(3,:))./(RR_E.*depth_diff);
         
         MargLik_C = MargLik_C + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV_C,'linear',-56) - ACC_EXPANSION;
-        index = (VV_C<1.0850);
+        index = (VV_C<=1./0.9220);
         MargLik_C(index) = -inf;
         
         MargLik_M = MargLik_M + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV_M,'linear',-56) - ACC_EXPANSION;
-        index = (VV_M<1.0850);
+        index = (VV_M<=1./0.9220);
         MargLik_M(index) = -inf;
         
         MargLik_E = MargLik_E + interp1(ACC_MODEL(:,1),ACC_MODEL(:,2),VV_E,'linear',-56) - ACC_EXPANSION;
-        index = (VV_E<1.0850);
+        index = (VV_E<=1./0.9220);
         MargLik_E(index) = -inf;
-        
-        index = (VV_C<data_full.lower_sedrate)|(VV_C>data_full.upper_sedrate);
+
+        index = (VV_C>1./data_full.lower_sedrate)|(VV_C<1./data_full.upper_sedrate);
         MargLik_C(index) = -inf;
         
-        index = (VV_M<data_full.lower_sedrate)|(VV_M>data_full.upper_sedrate);
+        index = (VV_M>1./data_full.lower_sedrate)|(VV_M<1./data_full.upper_sedrate);
         MargLik_M(index) = -inf;
         
-        index = (VV_E<data_full.lower_sedrate)|(VV_E>data_full.upper_sedrate);
+        index = (VV_E>1./data_full.lower_sedrate)|(VV_E<1./data_full.upper_sedrate);
         MargLik_E(index) = -inf;
         
         MargLik = [MargLik_C;MargLik_M;MargLik_E];

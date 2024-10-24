@@ -353,7 +353,7 @@ for ll = 1:L
     INFO = textscan(fileID,'%s %s');
     fclose(fileID);
     
-    data(ll).ACC_MODEL = 'lognormal_depth';
+    data(ll).ACC_MODEL = 'lognormal';
     data(ll).start_depth = str2double(INFO{2}{strcmp(INFO{1},'start_depth:')==1});
     data(ll).end_depth = str2double(INFO{2}{strcmp(INFO{1},'end_depth:')==1});
     data(ll).initial_shift = str2double(INFO{2}{strcmp(INFO{1},'initial_shift:')==1});
@@ -442,15 +442,16 @@ for ll = 1:L
     
     path = ['Defaults/Accumulation_Rate_Models/',data(ll).ACC_MODEL,'.txt'];
     data(ll).ACC_MODEL = load(path);
-    ID = (data(ll).ACC_MODEL(:,1)<0.9220);
+    data(ll).ACC_MODEL(:,2) = interp1(data(ll).ACC_MODEL(:,1),data(ll).ACC_MODEL(:,2),1./data(ll).ACC_MODEL(:,1)).*data(ll).ACC_MODEL(:,1).^(-2);
+    ID = (data(ll).ACC_MODEL(:,1)<=1./1.0850);
     CC = data(ll).ACC_MODEL(ID,:);
     DD = [CC(2:end,1)-CC(1:end-1,1),(CC(2:end,2)+CC(1:end-1,2))/2];
     data(ll).ACC_CONTRACTION = sum(DD(:,1).*DD(:,2));
-    ID = (data(ll).ACC_MODEL(:,1)>=0.9220)&(data(ll).ACC_MODEL(:,1)<1.0850);
+    ID = (data(ll).ACC_MODEL(:,1)<=1./0.9220)&(data(ll).ACC_MODEL(:,1)>1./1.0850);
     CC = data(ll).ACC_MODEL(ID,:);
     DD = [CC(2:end,1)-CC(1:end-1,1),(CC(2:end,2)+CC(1:end-1,2))/2];
     data(ll).ACC_STEADY = sum(DD(:,1).*DD(:,2));
-    ID = (data(ll).ACC_MODEL(:,1)>=1.0850);
+    ID = (data(ll).ACC_MODEL(:,1)>1./0.9220);
     CC = data(ll).ACC_MODEL(ID,:);
     DD = [CC(2:end,1)-CC(1:end-1,1),(CC(2:end,2)+CC(1:end-1,2))/2];
     data(ll).ACC_EXPANSION = sum(DD(:,1).*DD(:,2));
@@ -460,23 +461,21 @@ for ll = 1:L
     data(ll).ACC_EXPANSION = log(data(ll).ACC_EXPANSION/CC);
     data(ll).ACC_MODEL(:,2) = max(data(ll).ACC_MODEL(:,2),1e-24);
     data(ll).ACC_MODEL(:,2) = log(data(ll).ACC_MODEL(:,2));
-    
-    
+
+
     if ~isnan(data(ll).min_resolution)
         data(ll).res = data(ll).min_resolution;
     else
         data(ll).res = inf;
     end
     
-    if isinf(data(ll).upper_sedrate) || isnan(data(ll).upper_sedrate)
-        data(ll).lower_sedrate = -inf;
-    else
-        data(ll).lower_sedrate = 1/data(ll).upper_sedrate;
-    end
-    if isinf(data(ll).lower_sedrate) || isnan(data(ll).lower_sedrate)
+    
+    if isnan(data(ll).upper_sedrate)
         data(ll).upper_sedrate = inf;
-    else
-        data(ll).upper_sedrate = 1/data(ll).lower_sedrate;
+    end
+
+    if isnan(data(ll).lower_sedrate) || (data(ll).lower_sedrate<0)
+        data(ll).lower_sedrate = 0;
     end
     
     if isnan(data(ll).initial_scale)
