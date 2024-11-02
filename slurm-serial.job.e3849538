@@ -1,0 +1,14 @@
+License checkout failed.
+License Manager Error -15
+Unable to connect to the license server. 
+Check that the network license manager has been started, and that the client machine can communicate
+with the license server.
+
+Troubleshoot this issue by visiting: 
+https://www.mathworks.com/support/lme/R2021b/15
+
+Diagnostic Information:
+Feature: MATLAB 
+License path: /home/yuxin_zhou/.matlab/R2021b_licenses:/sw/MatLab/R2021b/licenses/license.dat:/sw/MatLab/R2021b/li
+censes/network.lic 
+Licensing error: -15,570. System Error: 115
