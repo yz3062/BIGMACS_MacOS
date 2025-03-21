@@ -22,7 +22,6 @@ target.stack(:,3) = target.stack(:,3)*CC;
 
 target.stack(:,2) = data.scale*target.stack(:,2) + data.shift;
 target.stack(:,3) = data.scale*target.stack(:,3);
-
 C14 = data.radiocarbon;
 Age_Info = data.suggested_age;
 Age_Info = [Age_Info,zeros(size(Age_Info,1),2)];
@@ -75,7 +74,7 @@ W = cell(N,1);
 for nn = 1:N-1
     n = N-nn;
 %     disp(data_full.name);
-    [A{n},W{n}] = Proposal_init(W{n+1},A{n+1},depth_diff(n),d18O(n,:),C14{n},Age_Info(n,:),data,param,S,target,data_type,n);
+[A{n},W{n}] = Proposal_init(W{n+1},A{n+1},depth_diff(n),d18O(n,:),C14{n},Age_Info(n,:),data,param,S,target,data_type,n);
 end
 
 
@@ -105,9 +104,9 @@ for n = 1:N-2
     RR = interp1(R(:,1),R(:,2),AAA);
     RR = repmat(RR,[nsamples,1]);
     VV = (AAA-AA(n,:)')./(RR.*depth_diff(n));
-    index_C = ((ZZ(n,:)==1)'.*(VV>0).*(VV<0.9220)==1);
-    index_M = ((ZZ(n,:)==2)'.*(VV>=0.9220).*(VV<1.0850)==1);
-    index_E = ((ZZ(n,:)==3)'.*(VV>=1.0850)==1);
+    index_C = ((ZZ(n,:)==1)'.*(VV>0).*(VV<=1./1.0850)==1);
+    index_M = ((ZZ(n,:)==2)'.*(VV<=1./0.9220).*(VV>1./1.0850)==1);
+    index_E = ((ZZ(n,:)==3)'.*(VV>1./0.9220)==1);
     
     log_w(index_C) = log_w(index_C) + interp1(data.ACC_MODEL(:,1),data.ACC_MODEL(:,2),VV(index_C),'linear',-56) - data.ACC_CONTRACTION;
     log_w(index_M) = log_w(index_M) + interp1(data.ACC_MODEL(:,1),data.ACC_MODEL(:,2),VV(index_M),'linear',-56) - data.ACC_STEADY;
@@ -116,7 +115,7 @@ for n = 1:N-2
     index = index_C|index_M|index_E;
     log_w(~index) = -inf;
     
-    index = (VV<data.lower_sedrate)|(VV>data.upper_sedrate);
+    index = (VV>1./data.lower_sedrate)|(VV<1./data.upper_sedrate);
     log_w(index) = -inf;
     
     WW = exp(log_w-max(log_w,[],2));
@@ -136,9 +135,9 @@ log_w = W{N} + PHI(4,ZZ(n,:))';
 RR = interp1(R(:,1),R(:,2),AAA);
 RR = repmat(RR,[nsamples,1]);
 VV = (AAA-AA(N-1,:)')./(RR.*depth_diff(N-1));
-index_C = ((ZZ(N-1,:)==1)'.*(VV>0).*(VV<0.9220)==1);
-index_M = ((ZZ(N-1,:)==2)'.*(VV>=0.9220).*(VV<1.0850)==1);
-index_E = ((ZZ(N-1,:)==3)'.*(VV>=1.0850)==1);
+index_C = ((ZZ(N-1,:)==1)'.*(VV>0).*(VV<=1./1.0850)==1);
+index_M = ((ZZ(N-1,:)==2)'.*(VV<=1./0.9220).*(VV>1./1.0850)==1);
+index_E = ((ZZ(N-1,:)==3)'.*(VV>1./0.9220)==1);
 log_w(index_C) = log_w(index_C) + interp1(data.ACC_MODEL(:,1),data.ACC_MODEL(:,2),VV(index_C),'linear',-56) - data.ACC_CONTRACTION;
 log_w(index_M) = log_w(index_M) + interp1(data.ACC_MODEL(:,1),data.ACC_MODEL(:,2),VV(index_M),'linear',-56) - data.ACC_STEADY;
 log_w(index_E) = log_w(index_E) + interp1(data.ACC_MODEL(:,1),data.ACC_MODEL(:,2),VV(index_E),'linear',-56) - data.ACC_EXPANSION;
@@ -146,7 +145,7 @@ log_w(index_E) = log_w(index_E) + interp1(data.ACC_MODEL(:,1),data.ACC_MODEL(:,2
 index = index_C|index_M|index_E;
 log_w(~index) = -inf;
 
-index = (VV<data.lower_sedrate)|(VV>data.upper_sedrate);
+index = (VV>1./data.lower_sedrate)|(VV<1./data.upper_sedrate);
 log_w(index) = -inf;
 
 WW = exp(log_w-max(log_w,[],2));

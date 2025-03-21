@@ -101,8 +101,8 @@ axes[1].plot(tuned_stack['X1'], tuned_stack['X2'], label='Win=400kyr', alpha=0.8
 # Win=200kyr
 axes[1].plot(tuned_stack_win200['X1'], tuned_stack_win200['X2'], label='Win=200kyr', alpha=0.8, color='olivedrab')
 
-# # Win=150kyr
-# axes[1].plot(tuned_stack_win150['X1'], tuned_stack_win150['X2'], label='Win=150kyr', alpha=0.5, color='indigo')
+# Win=150kyr
+axes[1].plot(tuned_stack_win150['X1'], tuned_stack_win150['X2'], label='Win=150kyr', alpha=0.5, color='indigo')
 
 axes[1].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[1].set_ylim(bottom=5.7)
@@ -136,10 +136,10 @@ l3 = axes[3].plot(tuned_stack['X1'], tuned_stack['X2'], label='Win=400kyr', alph
 # Win=200kyr
 l4 = axes[3].plot(tuned_stack_win200['X1'], tuned_stack_win200['X2'], label='Win=200kyr', alpha=0.8, color='olivedrab')
 
-# # Win=150kyr
-# l5 = axes[3].plot(tuned_stack_win150['X1'], tuned_stack_win150['X2'], label='Win=150kyr', alpha=0.5, color='indigo')
+# Win=150kyr
+l5 = axes[3].plot(tuned_stack_win150['X1'], tuned_stack_win150['X2'], label='Win=150kyr', alpha=0.5, color='indigo')
 
-axes[3].legend(handles=[l3[0], l4[0]], loc=[0.8,0.11])
+axes[3].legend(handles=[l3[0], l4[0], l5[0]], loc=[0.8,0.11])
 
 axes[3].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[3].set_xlabel('Age (ka BP)')
@@ -255,7 +255,7 @@ pos = axes[2].get_position()
 pos.y0 -= 0.03
 pos.y1 -= 0.03
 axes[2].set_position(pos)
-# plt.savefig('LR04_insolation_untuned_tuned_window_size_comparison.png', dpi=700)
+plt.savefig('LR04_insolation_untuned_tuned_window_size_comparison.png', dpi=700)
 # plt.savefig('Untuned_results_mean_exclusion_expanded_1172_removed_GTS2012_Hobart2023.png', dpi=700)
 # plt.savefig('Stitched_stack_LR04_insolation_untuned_no_compaction_corx.pdf')
 # plt.savefig('Stitched_neptune_stack_LR04_insolation_ProbStack.pdf')

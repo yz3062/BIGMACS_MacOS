@@ -11,7 +11,11 @@ dat=read("Stack_untuned_uniform_age_exclusion_expanded_1172_removed_Hobart2023.c
 #  use option 'genplot=4', which provides a useful normalization
 #  for visualizing the stability of the bedding cycles and
 #  evaluating changes in the relative dominance
-eha(dat,win=500,fmax=0.1,ydir=-1,genplot=4,pl=2,ylab="Age (ka)",xlab="Frequency (cycles/ka)")
+amp_output = eha(dat,win=500,fmax=0.1,ydir=-1,genplot=4,pl=2,ylab="Age (ka)",xlab="Frequency (cycles/ka)", output=2)
+
+# save diff to excel
+library(writexl)
+write_xlsx(amp_output, './amp_output.xlsx')
 
 #  the astronomical target comes from Laskar et al. (2004)
 # targetP contains the dominant obliquity term.
@@ -41,7 +45,7 @@ dat2[1]=dat2[1]-dat2[1,1]
 dat2_lin=linterp(dat2)
 
 # conduct a new eha analysis on the tuned record
-eha(dat2_lin,win=500,fmax=0.1,ydir=-1,genplot=4,pl=2,ylab="Age (ka)",xlab="Frequency (cycles/ka)")
+amp_output_after_tuning = eha(dat2_lin,win=500,fmax=0.1,ydir=-1,genplot=4,pl=2,ylab="Age (ka)",xlab="Frequency (cycles/ka)", output=2)
 
 # compare oxygen isotope data on depth-derived and eTimeOpt timescales
 plot(dat2_lin,type="l",col="red",xlab="Age (ka)",ylab="d18O", main="red=eTimeOpt timescale        black=depth-derived timescale"); lines(dat)

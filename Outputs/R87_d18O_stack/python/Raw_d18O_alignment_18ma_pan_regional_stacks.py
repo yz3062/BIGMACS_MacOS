@@ -186,4 +186,4 @@ fig.set_size_inches(6,10)
 plt.rcParams["font.family"] = "Arial"
 
 # plt.savefig('Raw_d18O_alignment_18ma_pan.png', dpi=700)
-plt.savefig('Raw_d18O_alignment_18ma_pan_regional_stacks.pdf')
+# plt.savefig('Raw_d18O_alignment_18ma_pan_regional_stacks.pdf')
