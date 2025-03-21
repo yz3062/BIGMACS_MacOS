@@ -1,7 +1,7 @@
 #!/bin/bash  -l
 #SBATCH --job-name="matlab_BIGMACS"
 #SBATCH --partition=largemem
-#SBATCH --output=R102.log
+#SBATCH --output=R107.log
 #SBATCH --time=48:00:00
 #SBATCH --mail-user=yuxin_zhou@ucsb.edu
 #SBATCH --mail-type=ALL

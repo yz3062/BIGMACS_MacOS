@@ -1,0 +1,32 @@
+node101.podcluster
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2021 The MathWorks, Inc.
+             R2021b Update 1 (9.11.0.1809720) 64-bit (glnxa64)
+                              November 2, 2021
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+>> Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 40).
+>> Number of workers: 40
+>> >> >> >> >> >> -------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+{Error using rmfield (line 65)
+A field named 'initial_shift' doesn't exist.
+
+Error in getData (line 634)
+data = rmfield(data,'initial_shift');
+
+Error in Stacking (line 6)
+[data,data_part,param,setting] = getData(inputFile,target,setting,'stacking');
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+} 
+>> 
