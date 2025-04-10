@@ -92,6 +92,6 @@ lines(tave-2*tsd,depth,type="l",lwd=1,col="red")
 output = cbind(depth, tsd)
 output_df = as.data.frame(output)
 
-# save diff to excel
-library(writexl)
-write_xlsx(output_df, './untuned_intermediate_tuned_ages_uncertainty.xlsx')
+# # save diff to excel
+# library(writexl)
+# write_xlsx(output_df, './untuned_intermediate_tuned_ages_uncertainty.xlsx')
