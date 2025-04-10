@@ -1,7 +1,7 @@
-% poolobj = parpool('local', 36);
-% fprintf('Number of workers: %g\n', poolobj.NumWorkers);
+poolobj = parpool('local', 36);
+fprintf('Number of workers: %g\n', poolobj.NumWorkers);
 
-inputFile = 'R109';
+inputFile = 'R107';
 
 inputMode = 'stack_construction';
 
