@@ -73,7 +73,7 @@ W = cell(N,1);
 % iteration:
 for nn = 1:N-1
     n = N-nn;
-%     disp(data_full.name);
+    % disp(data_full.name);
 [A{n},W{n}] = Proposal_init(W{n+1},A{n+1},depth_diff(n),d18O(n,:),C14{n},Age_Info(n,:),data,param,S,target,data_type,n);
 end
 
