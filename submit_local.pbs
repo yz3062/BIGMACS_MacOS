@@ -5,8 +5,8 @@
 #PBS -q casper
 #PBS -j oe
 #PBS -k eod
-#PBS -o R111.log
-#PBS -l select=1:ncpus=36:mpiprocs=36:mem=900GB
+#PBS -o R115.log
+#PBS -l select=1:ncpus=36:mpiprocs=36:mem=700GB
 #PBS -m abe
 #PBS -M yuxin_zhou@ucsb.edu
 

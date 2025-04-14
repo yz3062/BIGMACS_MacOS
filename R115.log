@@ -1,0 +1,249 @@
+MATLAB is selecting SOFTWARE rendering.
+OMP: Warning #182: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+             R2024b Update 3 (24.2.0.2806996) 64-bit (glnxa64)
+                             November 26, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 36 workers.
+Number of workers: 36
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+{Error using Proposal_init (line 105)
+Operands to the logical AND (&&) and OR (||) operators must be convertible to
+logical scalar values. Use the ANY or ALL functions to reduce operands to
+logical scalar values.
+
+Error in getProposal (line 77)
+[A{n},W{n}] = Proposal_init(W{n+1},A{n+1},depth_diff(n),d18O(n,:),C14{n},Age_Info(n,:),data,param,S,target,data_type,n);
+
+Error in initializeAlignment (line 7)
+parfor ll = 1:L
+
+Error in Stacking (line 12)
+QQ = initializeAlignment(data,data_part,param,target,setting);
+
+Error in BIGMACS (line 28)
+    [data,samples,param,target,setting] = Stacking(inputFile);
+
+Error in main (line 8)
+BIGMACS(inputFile,inputMode,'show');
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+} 
+Parallel pool using the 'Processes' profile is shutting down.
+Time elapsed = 28 s
+MATLAB is selecting SOFTWARE rendering.
+OMP: Warning #182: OMP_STACKSIZE: ignored because KMP_STACKSIZE has been defined
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+             R2024b Update 3 (24.2.0.2806996) 64-bit (glnxa64)
+                             November 26, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 36 workers.
+Number of workers: 36
+-------------------------------------------------------------------------------------------
+## BIGMACS: Bayesian Inference Gaussian Process Multiproxy Alignment of Continuous Signals
+-------------------------------------------------------------------------------------------
+## Stack construction algorithm is now running...
+#  Initializing...
+   Data are loaded successfully.
+   Initializing the age samples...
+   Done.
+#  Stacking algorithm is now running...
+#  Iteration 1:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [21.51738      22.39461      70.00288      75.44672      43.09894      112.0812      4.923085      97.55019        60.288      263.1385      9.212179      21.05292      14.26409      81.85683      91.34836      39.39932      75.72913       45.4658      33.22256      13.30034      10.50082        45.894].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.44585     0.26397      1.2601     0.45759     0.37359      1.8269    0.014228     0.17796     0.45285      4.4299      0.1274    0.039198   -0.003407     0.21056     0.58042     0.27298     0.12435     0.70524     0.19546    0.016708   -0.014029       2.096].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.065474   -0.087717    0.092309     0.11186     -0.1682    0.039334    0.065229     0.13157     0.36083    -0.01332     -1.1404    0.033099     0.06991  -0.0023697     0.23543   -0.037699     0.31523     0.30774    0.061213  0.00046524    0.041812     0.24394].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.010752    -0.12187    0.031429    0.025044    -0.23297    -0.28971     0.25249    -0.16331     0.11751     0.02408   -0.045584   -0.085299     0.32904  -0.0045661     0.27126   0.0025304     0.52144   -0.024055    0.097541   -0.037777     0.20773   -0.060989].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.021255    0.038346  -0.0034482    0.046761     0.22708    -0.72658   -0.016538     0.31648   0.0086765   -0.073689   0.0014506     0.33579   -0.090625    0.026673    -0.10633    -0.11035    0.073555    0.042798 -0.00071206    0.025534    0.032604     0.62285].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.016178    0.056943    -0.10869   -0.056271    -0.10336    -0.12459  -0.0033124  -0.0099219  -0.0064725     0.13878   -0.037819    -0.13672    -0.11098   -0.016123    0.080907   0.0074661   -0.060305   -0.017139    0.027196    -0.29778  -0.0048215   -0.052016].
+   Records are aligned to the target stack.
+   Iteration 1/10...
+   Iteration 2/10...
+   Iteration 3/10...
+   Iteration 4/10...
+   Iteration 5/10...
+   Iteration 6/10...
+   Iteration 7/10...
+   Iteration 8/10...
+   Iteration 9/10...
+   Iteration 10/10...
+   A new stack is updated.
+#  Iteration 2:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [17.74952      10.31252      89.82376      105.6876      37.57077      107.8529      7.871927      107.0262      84.09346      183.5691       32.7249      3.780656      17.38382       103.326      117.6672      39.26461      91.75035      19.36698      28.10346      12.28918      15.96506      15.89739].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.34587      0.0911      1.1763     0.83795     0.52661       1.662   -0.074694      1.2998     0.70423      0.8563     0.72025    -0.51494      0.1027      2.4884       1.257     0.23182      0.5438     0.30724    -0.19792   -0.045195     0.17405    -0.24785].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.0090058    0.021662     0.56652    -0.22719    -0.23424     0.46029   -0.018819     0.17158    0.022109    -0.10635     0.14743     0.13901    -0.13893    -0.30795     0.32526     0.16891     0.11719  -0.0012159   -0.017398    -0.11398     0.39832     0.67892].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.0032093     0.11015    0.009073   -0.053132    -0.14852    -0.13208   0.0072425      -0.255    0.096113   0.0052263     0.64554     0.18352   -0.033511     0.27286   0.0082783   -0.014926     -0.2134   -0.043001  -0.0012933   0.0027819    0.063576    -0.13419].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.0060266    0.026523   -0.030925   -0.040878     0.12625     0.15434   0.0065001      0.6244   -0.043315   0.0061442   -0.044262      1.0066     0.12542    0.015033    -0.12744    -0.10259     0.31108     -0.4578    0.004017  -0.0040896    0.026467    -0.14086].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.0040772     -0.5063    0.017202    0.033538    0.019737    -0.21815    -0.02596     0.02076    -0.21506    -0.12106   -0.047562    0.028173   -0.028566   -0.015994    0.037172     0.08491    -0.27607     0.30492   0.0028008    0.017255   0.0083642      0.4576].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.016559   0.0094472    0.011538   -0.012316   -0.018009     0.15765    0.043738   -0.086359     0.25937     0.12153    0.056427   -0.063267    0.025949    -0.10017    0.091246    -0.05115    -0.18615    -0.25546    0.040025    -0.01791     0.07795    -0.25309].
+   Records are aligned to the target stack.
+   Iteration 1/10...
+   Iteration 2/10...
+   Iteration 3/10...
+   Iteration 4/10...
+   Iteration 5/10...
+   Iteration 6/10...
+   Iteration 7/10...
+   Iteration 8/10...
+   Iteration 9/10...
+   Iteration 10/10...
+   A new stack is updated.
+#  Iteration 3:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.097447    0.030458   -0.050328     0.16031    -0.12369     0.98115   -0.083467   -0.039329     0.55282     0.41537    -0.13009    -0.24832      0.2339     0.27204    -0.30488    0.075728     0.08216   0.0015943    0.086393     0.10705    0.012596     0.72769].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.075752     0.01448    -0.10256    -0.31468    0.087431     0.31636   -0.018331     0.80797    -0.40326   -0.082044    0.083872    0.042445   -0.057844    -0.16616    0.048707    -0.18983    0.056656     0.21398    0.019849    0.016326    -0.22034   -0.094957].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.09978  -0.0097964   -0.041165   -0.066575    0.002461    -0.04715     0.38048    0.034156    -0.11715    -0.34916    0.039409     0.31771    -0.22431    -0.18079    -0.09579    0.035877    0.064612    0.015632      0.3369    0.057802     0.58268    -0.51484].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.24401     0.16364     0.13953   -0.057269   -0.049101      1.0632    -0.01985    0.015906     0.23417    -0.30363    0.038011   -0.019113     0.17954    -0.34918    0.041124    -0.22601    -0.15238     0.17188    0.031961   0.0014113    -0.10544    -0.37404].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.41947   -0.078025    -0.31798   -0.059852     0.13682    -0.15959     0.14011    0.031805     0.12305     0.25084    0.014202    0.013695     -0.1978     0.35245   -0.011829     0.17626     0.14313    -0.41183     0.10391   -0.081304    0.071365     0.42179].
+   Records are aligned to the target stack.
+   Iteration 1/10...
+   Iteration 2/10...
+   Iteration 3/10...
+   Iteration 4/10...
+   Iteration 5/10...
+   Iteration 6/10...
+   Iteration 7/10...
+   Iteration 8/10...
+   Iteration 9/10...
+   Iteration 10/10...
+   A new stack is updated.
+#  Iteration 4:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.023699    -0.17412    -0.45982     0.12621   -0.025517     0.28826    0.057532     -0.0323   0.0069903    -0.13551     0.31469  -0.0022692    0.027696     0.55194  -0.0041734    -0.16708    -0.17187     0.88844    -0.01946   0.0092466     0.75052     0.15379].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.080586    -0.13988    0.002765   -0.041837   -0.014976      0.3613  -0.0062858     0.12873   -0.060911    -0.17186    -0.11348   -0.016812    0.055485  -0.0025157    -0.18799     0.11446    -0.41312   -0.040092    -0.18634    0.054945     0.34136   -0.042732].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.21624   -0.030442   -0.031388      0.1011     0.18469    0.055939   0.0076479   -0.037359     0.51853     0.26516   -0.054188    0.019634    -0.13664  -0.0046547   -0.074226    0.087711     0.22515     0.42037  -0.0052645    -0.16081     0.50597  0.00040804].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.0040409     0.31514    0.076832    -0.17382     0.12735     0.16582  -0.0025545   -0.070991     0.34599    -0.20778   -0.016652    0.031012     0.04809    0.069997   0.0027769     0.20332  -0.0027405  -0.0091628     0.12208      0.1264    -0.28843    -0.34552].
+   Records are aligned to the target stack.
+   Iteration 1/10...
+   Iteration 2/10...
+   Iteration 3/10...
+   Iteration 4/10...
+   Iteration 5/10...
+   Iteration 6/10...
+   Iteration 7/10...
+   Iteration 8/10...
+   Iteration 9/10...
+   Iteration 10/10...
+   A new stack is updated.
+#  Iteration 5:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.025136     0.11446   -0.023441     0.12001    0.098766   -0.079259    -0.19394    -0.13745    0.072853     0.12151      0.1431    -0.47793     0.15863    0.011514     0.73983    0.020595   -0.024625   -0.076896     0.25181   -0.031866   -0.059819    0.048114].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.046228   -0.043409   -0.033852    0.039632  -0.0030582      0.1707    -0.23647    -0.50082     -0.4617  -0.0098151    0.031514   0.0099188   -0.019509    -0.10456    0.068049    -0.15939    0.047934    0.051707      0.0878    -0.26647    -0.24325  -0.0021274].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.07428    -0.55117    0.092742     0.25322     -0.2236      0.5064    -0.12777     0.58686     0.12462   -0.014183     0.30805    -0.15704    -0.34496     0.49782  -0.0063094   -0.054706    -0.21442    0.048248  -0.0097411     0.25614     0.18612   -0.076872].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.028526    0.010119   -0.020344    -0.52761     0.15031     0.26153   -0.019544     0.32552      0.1152    -0.41062   -0.095344     0.14237    -0.48326    -0.33642   -0.019622      0.2034    0.014229   -0.013882    0.022997  -0.0065458   -0.046633    0.042017].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.032035    0.038862    0.007896    0.076671    0.054043    0.063062   -0.041668     -1.1528    -0.10214     0.29412    -0.13908     0.13988     0.44735     0.33221     0.02262    0.014363   -0.087164   0.0077224   -0.032063   0.0039882   -0.022859    0.025632].
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.17877   -0.023105    0.027112   0.0031541   0.0020073   -0.015067     0.05258   -0.012799     0.10063    -0.21119  -0.0022571   0.0028176    0.038795   -0.010668   -0.074271  -0.0035243    0.018368   -0.018603    -0.17628   -0.022796   -0.082382   -0.041108].
+   Records are aligned to the target stack.
+   Iteration 1/10...
+   Iteration 2/10...
+   Iteration 3/10...
+   Iteration 4/10...
+   Iteration 5/10...
+   Iteration 6/10...
+   Iteration 7/10...
+   Iteration 8/10...
+   Iteration 9/10...
+   Iteration 10/10...
+   A new stack is updated.
+   Done.
+#  Age model construction algorithm is now running...
+#  Iteration 1:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [0.15799     -0.1044      -0.149     0.10231     0.02781    0.098145   -0.037097    0.010286   0.0082486     0.55134    -0.13318     0.28202    -0.17833    -0.28603  -0.0061382    0.077747    0.014054    0.038709    -0.29624    0.064894     0.20273    0.050955].
+#  Iteration 2:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.0041049   -0.060842    -0.32031      0.1837     0.21682      -0.383     0.17285    0.028757    0.047589     0.21662     -0.3386   -0.050007    -0.57521     0.23669  -0.0094146     0.11159  -0.0095243    0.014493    -0.33114   -0.014205   -0.060483    0.072297].
+#  Iteration 3:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.12317    0.038576    0.021022   0.0066905   0.0083857   -0.078015   -0.050016     0.26944     0.42106   -0.025436   -0.007638  -0.0082465    -0.41369     0.33564    0.029433    0.089205    0.012389     0.18254    -0.11216    0.044476    -0.11396    -0.22162].
+#  Iteration 4:
+   Ages are sampled.
+   Parameters are updated.
+   Updating parameters makes the average log-likelihood of samples increased by [-0.091982   0.0064406    -0.18129     0.16784    0.031721   0.0085367   -0.022565    -0.46089    -0.42925     0.22695   -0.071964     -0.1261   -0.029329     0.13781    0.084971    -0.11284   -0.031046   -0.051651   0.0036866     0.20938     0.40471     0.04443].
+#  Parameters are learned. Sampling algorithm is now running...
+-------------------------------------------------------------------------------------------
+#  Results and figures are being stored...
+[Warning: MATLAB has disabled some advanced graphics rendering features by
+switching to software OpenGL. For more information, click <a
+href="matlab:opengl('problems')">here</a>.] 
+   Done.
+   Results and figures are stored in Outputs/R115_d18O_stack.
+-------------------------------------------------------------------------------------------
+Parallel pool using the 'Processes' profile is shutting down.
+Time elapsed = 10736 s
