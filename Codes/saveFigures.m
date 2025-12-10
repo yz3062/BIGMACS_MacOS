@@ -22,7 +22,7 @@ if strcmp(FIG_MODE,'show') || strcmp(FIG_MODE,'hide')
     colors = distinguishable_colors(ncores);
     cc(1,:) = [0 0 1]; % radiocarbon
     cc(2,:) = [0.6350 0.0780 0.1840]; % d18O
-    cc(3,:) = [0.4660 0.6740 0.1880]; % additional ages
+    cc(3,:) = [0.02 0.95 1]; % additional ages
     cc(4,:) = [0.4940, 0.1840, 0.5560];% test
     
     fs = 14; % figure fontsize

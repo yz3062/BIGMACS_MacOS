@@ -61,9 +61,13 @@ insolation = Milankovitch_fetching_func.fetch_65N_summer_insolation()
 
 # ProbStack = Probstack_fetching_func.fetch_d18O()
 
-tuned_stack = pd.read_excel('../R/tuned_stack_unextrapolated.xlsx')
+# auto-tuned add RMSE minimization
 tuned_stack_win200 = pd.read_excel('../R/tuned_stack_unextrapolated_win200.xlsx')
-tuned_stack_win150 = pd.read_excel('../R/tuned_stack_unextrapolated_win150.xlsx')
+tuned_stack_win200['X1'] = tuned_stack_win200['X1']-2.3
+tuned_stack_win400 = pd.read_excel('../R/tuned_stack_unextrapolated_win400.xlsx')
+tuned_stack_win400['X1'] = tuned_stack_win400['X1']+1.7
+tuned_stack_win500 = pd.read_excel('../R/tuned_stack_unextrapolated_win500.xlsx')
+tuned_stack_win500['X1'] = tuned_stack_win500['X1']+1.4
 
 #%% plot
 fig, axes = plt.subplots(4,1, sharex=False, sharey=False)
@@ -81,13 +85,13 @@ axes = [plt.subplot(gs[0]),
 #                   label='BIGMACS 2sigma',
 #                   color='C4')
 # LR04
-axes[1].plot(LR04.index/1000, LR04, label='LRO4', color='k', zorder=1, alpha=0.5)
+# axes[1].plot(LR04.index/1000, LR04, label='LRO4', color='k', zorder=1, alpha=0.5)
 # # ProbStack
 # axes[1].plot(ProbStack.index/1000, ProbStack, label='ProbStack', color='C3', zorder=1, alpha=0.5)
 axes[1].set_xlim((0, 1350))
 axes[1].invert_yaxis()
 # BIAGMACS untuned
-axes[1].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untuned', alpha=0.8, color='C0')
+# axes[1].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untuned', alpha=0.8, color='C0')
 # axes[1].fill_between(stack_untuned_age,
 #                   stack['mean(permil)']+2*stack['sigma(permil)'],
 #                   stack['mean(permil)']-2*stack['sigma(permil)'],
@@ -95,14 +99,14 @@ axes[1].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untuned', 
 #                   label='BIGMACS 2sigma',
 #                   color='C0')
 
-# Win=400kyr
-axes[1].plot(tuned_stack['X1'], tuned_stack['X2'], label='Win=400kyr', alpha=0.8, color='dodgerblue')
-
 # Win=200kyr
 axes[1].plot(tuned_stack_win200['X1'], tuned_stack_win200['X2'], label='Win=200kyr', alpha=0.8, color='olivedrab')
 
-# Win=150kyr
-axes[1].plot(tuned_stack_win150['X1'], tuned_stack_win150['X2'], label='Win=150kyr', alpha=0.5, color='indigo')
+# Win=400kyr
+axes[1].plot(tuned_stack_win400['X1'], tuned_stack_win400['X2'], label='Win=400kyr', alpha=0.8, color='lightcoral')
+
+# Win=500kyr
+axes[1].plot(tuned_stack_win500['X1'], tuned_stack_win500['X2'], label='Win=500kyr', alpha=0.5, color='deepskyblue')
 
 axes[1].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[1].set_ylim(bottom=5.7)
@@ -115,14 +119,14 @@ axes[1].set_ylim(bottom=5.7)
 #                   alpha=0.3,
 #                   label='BIGMACS 2sigma',
 #                   color='C4')
-# LR04
-l1 = axes[3].plot(LR04.index/1000, LR04, label='LR04', color='k', zorder=1, alpha=0.5)
-# # ProbStack
-# l3 = axes[3].plot(ProbStack.index/1000, ProbStack, label='ProbStack', color='C3', zorder=1, alpha=0.5)
+# # LR04
+# l1 = axes[3].plot(LR04.index/1000, LR04, label='LR04', color='k', zorder=1, alpha=0.5)
+# # # ProbStack
+# # l3 = axes[3].plot(ProbStack.index/1000, ProbStack, label='ProbStack', color='C3', zorder=1, alpha=0.5)
 axes[3].set_xlim((1350, 2700))
 axes[3].invert_yaxis()
-# BIGMACS untuned
-l2 = axes[3].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untuned', alpha=0.8, color='C0')
+# # BIGMACS untuned
+# l2 = axes[3].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untuned', alpha=0.8, color='C0')
 # axes[3].fill_between(stack_untuned_age,
 #                   stack['mean(permil)']+2*stack['sigma(permil)'],
 #                   stack['mean(permil)']-2*stack['sigma(permil)'],
@@ -130,16 +134,17 @@ l2 = axes[3].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untun
 #                   label='BIGMACS 2sigma',
 #                   color='C0')
 
-# Win=400kyr
-l3 = axes[3].plot(tuned_stack['X1'], tuned_stack['X2'], label='Win=400kyr', alpha=0.8, color='dodgerblue')
-
 # Win=200kyr
-l4 = axes[3].plot(tuned_stack_win200['X1'], tuned_stack_win200['X2'], label='Win=200kyr', alpha=0.8, color='olivedrab')
+l1 = axes[3].plot(tuned_stack_win200['X1'], tuned_stack_win200['X2'], label='Win=200kyr', alpha=0.8, color='olivedrab')
 
-# Win=150kyr
-l5 = axes[3].plot(tuned_stack_win150['X1'], tuned_stack_win150['X2'], label='Win=150kyr', alpha=0.5, color='indigo')
+# Win=400kyr
+l4 = axes[3].plot(tuned_stack_win400['X1'], tuned_stack_win400['X2'], label='Win=400kyr', alpha=0.8, color='lightcoral')
 
-axes[3].legend(handles=[l3[0], l4[0], l5[0]], loc=[0.8,0.11])
+# Win=500kyr
+l5 = axes[3].plot(tuned_stack_win500['X1'], tuned_stack_win500['X2'], label='Win=500kyr', alpha=0.5, color='deepskyblue')
+
+axes[3].legend(handles=[l1[0], l4[0], l5[0]], loc=[0.01,0.13],
+               ncol=3)
 
 axes[3].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[3].set_xlabel('Age (ka BP)')
@@ -255,7 +260,4 @@ pos = axes[2].get_position()
 pos.y0 -= 0.03
 pos.y1 -= 0.03
 axes[2].set_position(pos)
-plt.savefig('LR04_insolation_untuned_tuned_window_size_comparison.png', dpi=700)
-# plt.savefig('Untuned_results_mean_exclusion_expanded_1172_removed_GTS2012_Hobart2023.png', dpi=700)
-# plt.savefig('Stitched_stack_LR04_insolation_untuned_no_compaction_corx.pdf')
-# plt.savefig('Stitched_neptune_stack_LR04_insolation_ProbStack.pdf')
+plt.savefig('LR04_insolation_tuned_window_size_comparison.png', dpi=700)

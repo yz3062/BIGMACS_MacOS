@@ -85,7 +85,7 @@ axes[1].plot(LR04.index/1000, LR04, label='LRO4', color='k', zorder=1, alpha=0.5
 axes[1].set_xlim((0, 1350))
 axes[1].invert_yaxis()
 # BIAGMACS untuned
-axes[1].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untuned', alpha=0.8, color='C0')
+#axes[1].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untuned', alpha=0.8, color='C0')
 # axes[1].fill_between(stack_untuned_age,
 #                   stack['mean(permil)']+2*stack['sigma(permil)'],
 #                   stack['mean(permil)']-2*stack['sigma(permil)'],
@@ -97,7 +97,7 @@ axes[1].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untuned', 
 axes[1].plot(tuned_stack['X1'], tuned_stack['X2'], label='BIGMACS intermediate tuned', alpha=0.8, color='dodgerblue')
 
 # BIGMACS full tuned
-axes[1].plot(tuned_stack['X1']+2.2, tuned_stack['X2'], label='BIGMACS full tuned', alpha=0.8, color='olivedrab')
+#axes[1].plot(tuned_stack['X1']+2.2, tuned_stack['X2'], label='BIGMACS full tuned', alpha=0.8, color='olivedrab')
 
 axes[1].set_ylabel(u'$\mathrm{\delta}^\mathrm{18}$O (‰)')
 axes[1].set_ylim(bottom=5.7)
@@ -117,7 +117,7 @@ l1 = axes[3].plot(LR04.index/1000, LR04, label='LR04', color='k', zorder=1, alph
 axes[3].set_xlim((1350, 2700))
 axes[3].invert_yaxis()
 # BIGMACS untuned
-l2 = axes[3].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untuned', alpha=0.8, color='C0')
+#l2 = axes[3].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untuned', alpha=0.8, color='C0')
 # axes[3].fill_between(stack_untuned_age,
 #                   stack['mean(permil)']+2*stack['sigma(permil)'],
 #                   stack['mean(permil)']-2*stack['sigma(permil)'],
@@ -129,7 +129,7 @@ l2 = axes[3].plot(stack_untuned_age, stack['mean(permil)'], label='BIGMACS untun
 l3 = axes[3].plot(tuned_stack['X1'], tuned_stack['X2'], label='BIGMACS tuned', alpha=0.8, color='dodgerblue')
 
 # BIGMACS full tuned
-l4 = axes[3].plot(tuned_stack['X1']+2.2, tuned_stack['X2'], label='BIGMACS tuned', alpha=0.8, color='olivedrab')
+#l4 = axes[3].plot(tuned_stack['X1']+2.2, tuned_stack['X2'], label='BIGMACS tuned', alpha=0.8, color='olivedrab')
 
 # axes[3].legend(handles=[l1[0], l2[0], l3[0], l4[0]], ncol=4, loc=[0.1,0.11])
 

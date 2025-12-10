@@ -30,7 +30,7 @@ runIt <- function(targetP)
 
 # now we will run 1000 Monte Carlo simulations. we need to set up the matrices to store the results.
 # nsim is the number of simulations to do
-nsim=100
+nsim=5
 # nwin is the number of windows evaluated with eTimeOpt
 nwin=238
 # set up matrices for Monte Carlo results

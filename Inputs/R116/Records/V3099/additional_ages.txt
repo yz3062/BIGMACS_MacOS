@@ -1,0 +1,3 @@
+depth	age	unct	mode
+5	10	5	1
+217	145	5	1

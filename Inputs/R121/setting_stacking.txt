@@ -1,0 +1,6 @@
+variance: heteroscedastic
+kernel_function: OU
+start_age: 75
+end_age: 141.9
+interval: 1
+interval_induced: 1
