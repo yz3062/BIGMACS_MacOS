@@ -1,11 +1,11 @@
 #!/bin/bash
 #PBS -N matlab_pct
 #PBS -A UCSB0015
-#PBS -l walltime=24:00:00
+#PBS -l walltime=04:00:00
 #PBS -q casper
 #PBS -j oe
 #PBS -k eod
-#PBS -o R122.log
+#PBS -o R123.log
 #PBS -l select=1:ncpus=36:mpiprocs=36:mem=720GB
 #PBS -m abe
 #PBS -M yuxin_zhou@ucsb.edu
